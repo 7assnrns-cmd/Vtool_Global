@@ -28,6 +28,12 @@ jobs:
         distribution: 'adopt'
         cache: gradle
 
+    
+    - name: Install NDK r23b
+      run: |
+        yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "ndk;23.1.7779620" || \
+        yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager "ndk;23.1.7779620"
+
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
