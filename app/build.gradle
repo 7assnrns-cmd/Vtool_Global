@@ -104,5 +104,6 @@ dependencies {
     // implementation files('libs/crimson.jar')
 }
 repositories {
+    maven { url 'https://api.xposed.info/' }
     mavenCentral()
 }
