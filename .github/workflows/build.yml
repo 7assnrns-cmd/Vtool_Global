@@ -27,7 +27,7 @@ jobs:
       run: chmod +x gradlew
 
     - name: Build release APK
-      run: ./gradlew assembleRelease --stacktrace
+      run: ./gradlew assembleRelease --stacktrace --stacktrace
 
     - name: Prepare APK
       run: |
