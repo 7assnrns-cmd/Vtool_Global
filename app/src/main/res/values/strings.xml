@@ -1,493 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="require_restart_app">需要重启应用才能生效</string>
-
+    <string name="require_restart_app">Restart the app for changes to take effect</string>
     <integer name="opacity">0</integer>
-
     <string name="format_hh_mm">%02d:%02d</string>
-    <string name="btn_cancel">取消</string>
-    <string name="btn_not_now">回头再说</string>
-    <string name="btn_delete">删除</string>
-    <string name="btn_dontshow">不再显示</string>
-    <string name="btn_confirm">确定</string>
-    <string name="btn_no">否</string>
-    <string name="btn_yes">是</string>
-    <string name="btn_continue">继续</string>
-    <string name="btn_modify_confirm">确认修改</string>
-    <string name="btn_help">帮助</string>
-    <string name="btn_iknow">知道了</string>
-    <string name="btn_exit">退出</string>
-    <string name="btn_hide">隐藏</string>
-    <string name="btn_resume">恢复</string>
-    <string name="btn_skip">跳过</string>
-    <string name="btn_retry">重试</string>
-    <string name="btn_apply">应用</string>
-    <string name="btn_reboot">重启</string>
-    <string name="btn_resume_selected">恢复选中</string>
-    <string name="error_su_timeout">等待超时，请确保你的Root管理器正在后台运行，并重试！\n\n请确保你没有阻止“授权管理器(SuperSu、Magisk Manager等)”自启动，并允许后台弹出窗口、显示悬浮窗等权限。如果一直没有弹出授权对话框，建议重启手机再试！\n</string>
-
-    <string name="error_root">抱歉，没有获取到ROOT权限</string>
-    <string name="error_root_desc">没有ROOT权限，将失去许多特色功能。\n如果你错过了授权提示，或未看到弹窗，请找到你的ROOT管理器，手动设置允许Scene使用ROOT权限~</string>
-    <string name="question_install_busybox">安装Busybox吗？</string>
-    <string name="question_install_busybox_desc">你的手机似乎没有安装busybox，这会导致Scene无法使用，是否要立即安装（需要修改System）？</string>
-
-    <string name="share_link">你也来试试Scene吧，我觉得还不错，下载地址：\n http://vtools.omarea.com/</string>
-    <!--<string name="feedback_link">mqqwpa://im/chat?chat_type=wpa&amp;uin=1191634433</string>-->
-
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_not_now">Not now</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_dontshow">Don\'t show again</string>
+    <string name="btn_confirm">OK</string>
+    <string name="btn_no">No</string>
+    <string name="btn_yes">Yes</string>
+    <string name="btn_continue">Continue</string>
+    <string name="btn_modify_confirm">Confirm changes</string>
+    <string name="btn_help">Help</string>
+    <string name="btn_iknow">Got it</string>
+    <string name="btn_exit">Exit</string>
+    <string name="btn_hide">Hide</string>
+    <string name="btn_resume">Resume</string>
+    <string name="btn_skip">Skip</string>
+    <string name="btn_retry">Retry</string>
+    <string name="btn_apply">Apply</string>
+    <string name="btn_reboot">Reboot</string>
+    <string name="btn_resume_selected">Resume selected</string>
+    <string name="btn_copy_output">Copy output</string>
+    <string name="error_su_timeout">Timed out waiting. Make sure your root manager (Magisk/SuperSU) is running in the background, then retry!\n\nEnsure you didn\'t block "Authorization Manager" from auto-starting, and allowed background popups and floating windows. If no dialog appears, reboot your phone and try again!\n</string>
+    <string name="error_root">Sorry, ROOT permission was not granted</string>
+    <string name="error_root_desc">Without ROOT, many features will be unavailable.\nIf you missed the prompt or didn\'t see a dialog, open your ROOT manager and manually allow Scene to use ROOT~</string>
+    <string name="question_install_busybox">Install Busybox?</string>
+    <string name="question_install_busybox_desc">Your device doesn\'t seem to have busybox installed, which will prevent Scene from working. Install now (requires modifying System)?</string>
+    <string name="share_link">Try Scene too — I think it\'s great. Download:\n http://vtools.omarea.com/</string>
     <string name="app_name">Scene4</string>
     <string name="app_name_short">Scene4</string>
-    <string name="app_name_mode_switch">Scene-快速切换模式</string>
-
-    <string name="accessibility_service_description">Scene增强服务\n你需要激活本服务，才能使用以下功能：\n\n1.动态响应（根据前台应用自动调整性能）.\n\n2.自动行为（在开关屏幕时切换网络或切换应用时回收进程）.\n\n3.自动安装（安装第三方应用时自动点击下一步）</string>
-
-    <string name="backup_action_title_boot">导出Boot</string>
-    <string name="backup_action_desc_boot">备份当前使用中的Boot为img，复制到/sdcard/boot.img</string>
-    <string name="restore_action_title_boot">刷入Boot</string>
-    <string name="restore_action_desc_boot">选择刷入boot.img</string>
-
-    <string name="backup_action_title_rec">导出Recovery</string>
-    <string name="backup_action_desc_rec">备份当前使用中的导出Recovery为img，复制到/sdcard/recovery.img</string>
-    <string name="restore_action_title_rec">刷入Recovery</string>
-    <string name="restore_action_desc_rec">选择刷入recovery.img</string>
-
-    <string name="backup_action_title_dtbo">导出DTBO分区</string>
-    <string name="backup_action_desc_dtbo">导出DTBO分区为img镜像，复制到/sdcard/dtbo.img</string>
-    <string name="restore_action_title_dtbo">刷入DTBO镜像</string>
-    <string name="restore_action_desc_dtbo">选择刷入dtbo.img</string>
-
-    <string name="backup_action_title_persist">导出Persist分区</string>
-    <string name="backup_action_desc_persist">导出Persist分区为img镜像，复制到/sdcard/persist.img</string>
-    <string name="restore_action_title_persist">刷入Persist镜像</string>
-    <string name="restore_action_desc_persist">选择刷入persist.img</string>
-
-    <string name="backup_file_exists">覆盖文件？</string>
-    <string name="backup_img_exists">/sdcard/%s.img已经存在，是否覆盖已有文件？\n</string>
-    <string name="backup_space_small">存储空间不足，请至少预留200M可用空间！</string>
-
-    <string name="autobooster_tab_details">黑名单设置</string>
-    <string name="autobooster_tab_system_scene">系统场景</string>
-    <string name="auto_clear_ignore_chager">充电状态忽略</string>
-    <string name="auto_clear_ignore_chager_desc">充电状态下，息屏动作延迟到充电完成才执行</string>
-
-    <string name="settings_disable_selinux">SeLinux宽容模式</string>
-    <string name="settings_disable_selinux_desc">将SELinux切换到宽容模式(部分软件叫[关闭Selinux])，SeLinux状态对Scene没有任何影响，并且开启宽容模式可能会死机重启！</string>
-    <string name="settings_theme">主题</string>
-    <string name="settings_theme_wallpaper">使用壁纸</string>
-    <string name="settings_theme_wallpaper_desc">使用系统壁纸作为窗口背景，显示为半透明界面</string>
-    <string name="settings_debug_layer">调试窗口</string>
-    <string name="settings_debug_layer_desc">显示Scene判定前台应用过程的日志</string>
-    <string name="settings_help_icon">提示图标</string>
-    <string name="settings_help_icon_desc">在功能项旁边显示功能说明提示（问号）图标</string>
-    <string name="settings_auto_exit">异常时自动退出</string>
-    <string name="settings_auto_exit_desc">运行过程出现异常时自动结束进程，避免卡死白屏</string>
-    <string name="settings_logcat_title">错误日志</string>
-    <string name="settings_logcat_desc">当Scene发生错误闪退时，点击下面的按钮通过logcat抓取日志，发送给开发者以便解决问题</string>
-    <string name="settings_black_notification">黑色通知背景</string>
-    <string name="settings_black_notification_desc">系统处于夜间模式时，将Scene的常驻通知显示为黑色背景(正常情况无需开启此选项)</string>
-
-    <string name="menu_home">概况</string>
-    <string name="menu_paypal">捐赠打赏</string>
-    <string name="menu_scene_mode">场景模式</string>
-    <string name="menu_app_scene">应用场景</string>
-    <string name="menu_system_scene">系统场景</string>
-    <string name="menu_auto_click">自动点击</string>
-    <string name="menu_cpu_modes">性能配置</string>
-    <string name="menu_freeze">应用偏见</string>
-    <string name="menu_battery_stats">耗电统计</string>
-    <string name="menu_core_control">CPU 控制</string>
-    <string name="menu_sundry">杂项设置</string>
-    <string name="menu_additional">附加功能</string>
-    <string name="menu_applictions">应用管理</string>
-    <string name="menu_swap">SWAP设置</string>
-    <string name="menu_battery">充电控制</string>
-    <string name="menu_charge">充电统计</string>
-    <string name="menu_custom_command">自定义命令</string>
-    <string name="menu_processes">进程管理</string>
-    <string name="menu_fps_chart">帧率记录</string>
-    <string name="menu_app_magisk">Magisk助手</string>
-    <string name="menu_gesture">手势导航</string>
-    <string name="menu_xposed_app">应用设置</string>
-    <string name="menu_xposed_global">全局设置</string>
-    <string name="menu_filter">屏幕滤镜</string>
-    <string name="menu_img">备份还原</string>
-    <string name="menu_qq">吹牛扯淡</string>
-    <string name="menu_menu_title">反馈交流</string>
-    <string name="menu_share">分享应用</string>
-    <string name="menu_miui_thermal">MIUI温控</string>
-
-    <string name="system">系统</string>
-
-    <string name="accessibility_running">辅助服务已激活</string>
-    <string name="accessibility_stoped">点击此处去激活辅助服务</string>
-
-    <string name="battery_title">电池：</string>
-    <string name="battery_title_desc1">如需使用“充电调速”、“充电保护”功能，请务必保持Scene后台运行！</string>
-    <string name="battery_reality_limit">实际上限电流：</string>
-    <string name="battery_pd_allowed">USB-PD快充</string>
-    <string name="battery_pd_allowed_desc">手机会根兼容情况决定是否激活USB-PD充电，无需手动设置。手动开关会导致充电速度缓慢，因此不允许手动修改！</string>
-    <string name="battery_pd_active_state">当前状态：</string>
-    <string name="battery_pd_active_1">已进入PD快充模式</string>
-    <string name="battery_pd_active_0">未进入PD快充模式</string>
-    <string name="battery_auto_boot_desc">OK，如果你要手机重启后自动开启本功能，请允许Scene开机自启！</string>
-    <string name="battery_qc_rehoot_desc">充电加速服务已禁用，可能需要重启手机才能恢复默认设置！</string>
-    <string name="battery_pd_active_unknown">未知</string>
+    <string name="app_name_mode_switch">Scene - Quick mode switch</string>
+    <string name="accessibility_service_description">Scene Enhancement Service\nYou need to enable this service to use:\n\n1. Dynamic response (adjust performance based on foreground app).\n\n2. Auto behavior (switch network on screen off or reclaim processes on app switch).\n\n3. Auto-install (auto-click Next when installing third-party apps).</string>
+    <string name="backup_action_title_boot">Backup Boot</string>
+    <string name="backup_action_desc_boot">Backup the current Boot as img, copied to /sdcard/boot.img</string>
+    <string name="restore_action_title_boot">Flash Boot</string>
+    <string name="restore_action_desc_boot">Select and flash boot.img</string>
+    <string name="backup_action_title_rec">Backup Recovery</string>
+    <string name="backup_action_desc_rec">Backup the current Recovery as img, copied to /sdcard/recovery.img</string>
+    <string name="restore_action_title_rec">Flash Recovery</string>
+    <string name="restore_action_desc_rec">Select and flash recovery.img</string>
+    <string name="backup_action_title_dtbo">Backup DTBO Partition</string>
+    <string name="backup_action_desc_dtbo">Export DTBO partition as img, copied to /sdcard/dtbo.img</string>
+    <string name="restore_action_title_dtbo">Flash DTBO Image</string>
+    <string name="restore_action_desc_dtbo">Select and flash dtbo.img</string>
+    <string name="backup_action_title_persist">Backup Persist Partition</string>
+    <string name="backup_action_desc_persist">Export Persist partition as img, copied to /sdcard/persist.img</string>
+    <string name="restore_action_title_persist">Flash Persist Image</string>
+    <string name="restore_action_desc_persist">Select and flash persist.img</string>
+    <string name="backup_file_exists">Overwrite file?</string>
+    <string name="backup_img_exists">/sdcard/%s.img already exists. Overwrite?</string>
+    <string name="backup_space_small">Not enough storage! Please free at least 200MB.</string>
+    <string name="autobooster_tab_details">Blacklist Settings</string>
+    <string name="autobooster_tab_system_scene">System Scene</string>
+    <string name="auto_clear_ignore_chager">Ignore while charging</string>
+    <string name="auto_clear_ignore_chager_desc">When charging, delay screen-off actions until charging completes</string>
+    <string name="settings_disable_selinux">SELinux Permissive Mode</string>
+    <string name="settings_disable_selinux_desc">Switch SELinux to permissive mode (some apps call this [Disable SELinux]). SELinux state doesn\'t affect Scene, and enabling permissive mode may cause freezes or reboots!</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_wallpaper">Use wallpaper</string>
+    <string name="settings_theme_wallpaper_desc">Use system wallpaper as window background with semi-transparent UI</string>
+    <string name="settings_debug_layer">Debug window</string>
+    <string name="settings_debug_layer_desc">Show logs of Scene\'s foreground app detection</string>
+    <string name="settings_help_icon">Help icons</string>
+    <string name="settings_help_icon_desc">Show help (?) icons next to features</string>
+    <string name="settings_auto_exit">Auto-exit on error</string>
+    <string name="settings_auto_exit_desc">Automatically end the process on error to avoid freezes and white screens</string>
+    <string name="settings_logcat_title">Error logs</string>
+    <string name="settings_logcat_desc">When Scene crashes, click the button below to capture logcat logs and send to the developer to help resolve the issue</string>
+    <string name="settings_black_notification">Black notification background</string>
+    <string name="settings_black_notification_desc">Use black background for Scene\'s persistent notification in dark mode (usually not needed)</string>
+    <string name="menu_home">Overview</string>
+    <string name="menu_paypal">Donate</string>
+    <string name="menu_scene_mode">Scene Modes</string>
+    <string name="menu_app_scene">App Scene</string>
+    <string name="menu_system_scene">System Scene</string>
+    <string name="menu_auto_click">Auto Click</string>
+    <string name="menu_cpu_modes">Performance Profiles</string>
+    <string name="menu_freeze">App Bias</string>
+    <string name="menu_battery_stats">Battery Stats</string>
+    <string name="menu_core_control">CPU Control</string>
+    <string name="menu_sundry">Misc Settings</string>
+    <string name="menu_additional">Add-ons</string>
+    <string name="menu_applictions">App Manager</string>
+    <string name="menu_swap">SWAP</string>
+    <string name="menu_battery">Charge Control</string>
+    <string name="menu_charge">Charge Stats</string>
+    <string name="menu_custom_command">Custom Commands</string>
+    <string name="menu_processes">Process Manager</string>
+    <string name="menu_fps_chart">FPS Charts</string>
+    <string name="menu_app_magisk">Magisk Helper</string>
+    <string name="menu_gesture">Gesture Nav</string>
+    <string name="menu_xposed_app">App Settings</string>
+    <string name="menu_xposed_global">Global Settings</string>
+    <string name="menu_filter">Screen Filter</string>
+    <string name="menu_img">Backup/Restore</string>
+    <string name="menu_qq">Chat</string>
+    <string name="menu_menu_title">Feedback</string>
+    <string name="menu_share">Share App</string>
+    <string name="menu_miui_thermal">MIUI Thermal</string>
+    <string name="system">System</string>
+    <string name="accessibility_running">Accessibility service is active</string>
+    <string name="accessibility_stoped">Tap here to enable accessibility service</string>
+    <string name="battery_title">Battery:</string>
+    <string name="battery_title_desc1">To use "Charging Speed" and "Charge Protection", keep Scene running in the background!</string>
+    <string name="battery_reality_limit">Actual current limit:</string>
+    <string name="battery_pd_allowed">USB-PD Fast Charging</string>
+    <string name="battery_pd_allowed_desc">The phone decides whether to activate USB-PD based on compatibility — no manual setting needed. Manual toggle may slow charging, so manual changes are disabled!</string>
+    <string name="battery_pd_active_state">Current state:</string>
+    <string name="battery_pd_active_1">PD fast charging active</string>
+    <string name="battery_pd_active_0">PD fast charging inactive</string>
+    <string name="battery_auto_boot_desc">OK. To auto-enable this after reboot, allow Scene to auto-start!</string>
+    <string name="battery_qc_rehoot_desc">Charging boost service disabled. Reboot may be required to restore defaults!</string>
+    <string name="battery_pd_active_unknown">Unknown</string>
     <string name="battery_uevent_title">$ bms/uevent</string>
     <string name="battery_usb_uevent_title">$ usb/uevent</string>
     <string name="battery_night_mode_time">%02d:%02d</string>
-    <string name="battery_night_mode">动态充电速度</string>
-    <string name="battery_night_mode_desc">在接近充满时调至缓慢充电\n\n并在夜间主动降低充电速度</string>
-    <string name="battery_time_get_up">起床时间</string>
-    <string name="battery_time_sleep">入睡时间</string>
-    <string name="battery_manual_control">手动控制</string>
-    <string name="battery_charge_disable">禁止充电</string>
-    <string name="battery_charge_resume">恢复充电</string>
-    <string name="battery_usage_history">电池使用记录</string>
-    <string name="battery_view_history">查看记录</string>
-    <string name="battery_delete_history">删除记录</string>
-    <string name="battery_bp">充电保护</string>
-    <string name="battery_bp_desc">达到指定电量后停止充电\n\n注意：长期使用可能导致电量显示失准</string>
-    <string name="battery_bp_level_desc">电量限制值（%）</string>
-    <string name="battery_qc_charger">充电调速</string>
-    <string name="battery_bp_status">达到%d%%停止充电，低于%d%%恢复</string>
-    <string name="battery_qc_charger_desc">调整充电速度限制。疯狂调高毫无意义，因为并不会取得实际效果，请在有效范围内调节数值\n\n注意：上限数值仅供参考，请以实际充电速度为准！</string>
-    <string name="battery_charge_disabled">充电功能已禁止！</string>
-    <string name="battery_charge_resumed">充电功能已恢复！</string>
-    <string name="battery_forgery">数据伪装</string>
-    <string name="battery_forgery_ratio">电池电量</string>
-    <string name="battery_forgery_full_now">充满容量</string>
-    <string name="battery_step_charge">阶梯式充电</string>
-    <string name="battery_step_charge_desc">系统根据电量分阶段调整充电速度上限，有助于保护电池寿命\n\n一般建议保持默认设置</string>
-    <string name="battery_exec_option">充电调速目的</string>
+    <string name="battery_night_mode">Dynamic charging speed</string>
+    <string name="battery_night_mode_desc">Slow down near full charge\n\nAnd reduce charging speed at night</string>
+    <string name="battery_time_get_up">Wake up time</string>
+    <string name="battery_time_sleep">Bedtime</string>
+    <string name="battery_manual_control">Manual control</string>
+    <string name="battery_charge_disable">Disable charging</string>
+    <string name="battery_charge_resume">Resume charging</string>
+    <string name="battery_usage_history">Battery usage history</string>
+    <string name="battery_view_history">View history</string>
+    <string name="battery_delete_history">Delete history</string>
+    <string name="battery_bp">Charge Protection</string>
+    <string name="battery_bp_desc">Stop charging at the specified level\n\nNote: Long-term use may cause battery display inaccuracy</string>
+    <string name="battery_bp_level_desc">Level limit (%)</string>
+    <string name="battery_qc_charger">Charging speed</string>
+    <string name="battery_bp_status">Stop at %d%% , resume below %d%%</string>
+    <string name="battery_qc_charger_desc">Adjust charging speed limit. Crazily increasing it has no meaning since it won\'t take effect — adjust within a valid range.\n\nNote: Limit values are reference-only; actual speed may differ!</string>
+    <string name="battery_charge_disabled">Charging disabled!</string>
+    <string name="battery_charge_resumed">Charging resumed!</string>
+    <string name="battery_forgery">Data disguise</string>
+    <string name="battery_forgery_ratio">Battery level</string>
+    <string name="battery_forgery_full_now">Full capacity</string>
+    <string name="battery_step_charge">Step charging</string>
+    <string name="battery_step_charge_desc">System adjusts charging speed limit in stages based on level, helping extend battery life\n\nGenerally recommended to keep defaults</string>
+    <string name="battery_exec_option">Charging speed purpose</string>
     <string-array name="battery_exec_options">
-        <item>降低速度</item>
-        <item>加速充电</item>
-        <item>往死里充</item>
+        <item>Reduce speed</item>
+        <item>Speed up charging</item>
+        <item>Maximize charging</item>
     </string-array>
-    <string name="battery_exec_desc">Scene会根据你的选择在不同时机执行速度变更，具体差异如下\n\n降低速度：只在充电器连接和电量百分比变化时重新设置充电速度\n加速充电：电池状态发生变化、充电器连接时重新设置充电速度\n往死里充：在[充电加速]的逻辑基础上，每秒自动重新设置充电速度</string>
-
-    <string name="battery_status_discharging">【未充电】</string>
-    <string name="battery_status_charging">【充电中】</string>
-    <string name="battery_status_full">【已充满】</string>
-    <string name="battery_status_not_charging">【未充电】</string>
-    <string name="battery_status_unknown">【状态未知】</string>
-    <string name="battery_status_sum">（大约充入 %smAh）</string>
-    <string name="electricity_unit_adj">电流单位校准</string>
-    <string name="electricity_unit_adj_desc">当前充电速度，除以：</string>
-    <string name="electricity_unit_as">显示为：</string>
-    <string name="electricity_unit_adj_desc2">充电应显示为正数，放电应显示为负数</string>
-
-    <string name="applist_warn">目前所提供的应用数据备份功能，需要系统集成busybox、toybox，使用tar+gz压缩数据（如果系统支持，将使用pigz提高压缩速度），仅备份 “/data/data/应用包名” 下的数据，且不保证兼容所有系统和应用。\n\n应用备份文件在 /sdcard/backups/apps（Android 11+系统不支持备份功能）</string>
-    <string name="dialog_addin_device_warn">机型信息请不要输入特殊符号！\n已兼容【应用变量】模块的机型代码，复制后重新打开此窗口即可使用！</string>
-    <string name="dialog_addin_device_desc">修改后可点击“还原”->“确认”恢复修改前的机型，卸载Scene会导致备份的机型信息丢失，请务必还原后再卸载！\n\n或者，你也可以通过重新刷入完整ROM来恢复机型信息！\n\n使用DualBootPatcher多系统软件切勿使用本功能修改机型！！！</string>
-    <string name="dialog_addin_device_inner">预设模板</string>
-    <string name="title_activity_shortcut">快捷启动</string>
-    <string name="title_activity_freeze">应用偏见</string>
+    <string name="battery_exec_desc">Scene changes speed at different moments based on your choice:\n\nReduce speed: Only re-set speed when charger connects and battery % changes\nSpeed up: Re-set speed when battery state changes or charger connects\nMaximize: Re-set speed every second on top of [Speed up] logic</string>
+    <string name="battery_status_discharging">[Discharging]</string>
+    <string name="battery_status_charging">[Charging]</string>
+    <string name="battery_status_full">[Full]</string>
+    <string name="battery_status_not_charging">[Not charging]</string>
+    <string name="battery_status_unknown">[Unknown]</string>
+    <string name="battery_status_sum">(approx. %smAh charged)</string>
+    <string name="electricity_unit_adj">Current unit calibration</string>
+    <string name="electricity_unit_adj_desc">Current charging speed divided by:</string>
+    <string name="electricity_unit_as">Displayed as:</string>
+    <string name="electricity_unit_adj_desc2">Charging should be positive, discharging negative</string>
+    <string name="applist_warn">The app data backup feature requires busybox/toybox integrated in the system. Uses tar+gz compression (uses pigz if supported) to back up only "/data/data/package" data. Not guaranteed compatible with all systems/apps.\n\nBackups are stored in /sdcard/backups/apps (Android 11+ not supported)</string>
+    <string name="dialog_addin_device_warn">Don\'t use special characters in device info!\nCompatible with [App Variables] module\'s device codes. Copy and reopen this window to use.</string>
+    <string name="dialog_addin_device_desc">After modifying, tap "Restore" -> "OK" to restore the original device info. Uninstalling Scene will lose the backed-up device info, so restore first!\n\nAlternatively, flash a full ROM to restore device info!\n\nDo NOT use this feature on DualBootPatcher multi-boot setups!!!</string>
+    <string name="dialog_addin_device_inner">Preset templates</string>
+    <string name="title_activity_shortcut">Quick Launch</string>
+    <string name="title_activity_freeze">App Bias</string>
     <string name="title_activity_online">Scene-Online</string>
-
-    <string name="shortcut_disabled">暂不可用</string>
-    <string name="shortcut_p1">省电模式</string>
-    <string name="shortcut_p1_long">性能配置-省电</string>
-    <string name="shortcut_p2">均衡模式</string>
-    <string name="shortcut_p2_long">性能配置-均衡</string>
-    <string name="shortcut_p3">性能模式</string>
-    <string name="shortcut_p3_long">性能配置-性能</string>
-    <string name="shortcut_p4">极速模式</string>
-    <string name="shortcut_p4_long">性能配置-极速</string>
-    <string name="device_unsupport">该功能暂不支持您的设备！</string>
-
-    <string name="addin_fullscreen_on">沉浸式体验</string>
-    <string name="addin_fullscreen_on_desc">自动隐藏状态栏、导航栏</string>
-    <string name="addin_flyme_static_blur">减少Flyme6模糊</string>
-    <string name="addin_flyme_static_blur_desc">禁用Flyme6下拉通知中心的实时模糊效果，以减少魅族低端机在游戏或视频播放时下拉通知中心的卡顿，或许还能省电，需要重启。</string>
-    <string name="addin_miui_hide_search">MIUI9去通知中心搜索</string>
-    <string name="addin_miui_hide_search_desc">默认隐藏MIUI9系统下拉通知中心的搜索框，重启后生效</string>
-    <string name="addin_dpi">DPI、分辨率修改</string>
-    <string name="addin_dpi_desc">自定义手机DPI或分辨率，可能导致设备无法正常启动，或UI错误</string>
-    <string name="addin_deviceinfo">机型修改</string>
-    <string name="addin_deviceinfo_desc">通过更改build.prop伪装机型，部分手机可能会无法开机或出现Bug</string>
-    <string name="addin_mac">修改MAC地址（方案1）</string>
-    <string name="addin_mac_desc">自定义手机WIFI网卡MAC地址，仅支持部分设备</string>
-    <string name="addin_mac_2">修改MAC地址（方案2）</string>
-    <string name="addin_mac_desc_2">自定义手机WIFI网卡MAC地址，仅支持部分设备，比较适合Android Q</string>
-    <string name="addin_force_dex_compile">强制dex2oat编译</string>
-    <string name="addin_force_dex_compile_desc">对应用进行dex2oat编译，降低运行时的CPU和RAM占用。编译过程可能需要半个小时，系统更新后需要重新编译！</string>
-    <string name="addin_dexopt_helpinfo">在Android N以后，为了减少应用空间占用和提高安装效率，在安装应用时不再对dex进行完整编译，导致运行速度下降。通过本功能选中“编译”将在安装应用时使用speed模式进行编译，安装速度显著变慢，但是运行时更加流畅(提升约20%，对游戏帧率无提升！)。\n\n以Oreo系统下斗鱼TV客户端为例，全新安装时base.odex仅为6.8MB，编译后增大到103MB。\n\n但国内许多应用采用热更新技术，运行时经常需要从服务器下载最新代码并解析渲染，这是这些应用启动慢或启动后卡顿的主要原因。因此dex2oat编译并不能为这类应用带来明显的性能提升！</string>
-    <string name="addin_dex2oat_helplink">https://source.android.com/devices/tech/dalvik/jit-compiler?hl=zh-cn</string>
-    <string name="addin_pm_dexopt">应用安装dex2oat策略</string>
-    <string name="addin_pm_dexopt_desc">适用于Android N+，调整PackageManager应用安装时的dex2oat编译策略，更新系统后需要重新设置</string>
-    <string name="addin_wifi">查看保存的WIFI</string>
-    <string name="addin_wifi_desc">解析/data/misc/wifi目录下的wpa_supplicant.conf或WifiConfigStore.xml</string>
-    <string name="addin_bpc">Performance Boost Config精简</string>
-    <string name="addin_bpc_desc">关闭Performance Boost Config中的一些选项，避免CPU频繁被拉高频率造成耗电，但保留应用启动升频，会略微降低体验。需要重启！</string>
-    <string name="addin_continue">继续</string>
-
-    <string name="swap_on_close">正在关闭SWAP，这可能很慢</string>
-    <string name="swap_current_state">当前状态：</string>
+    <string name="shortcut_disabled">Not available</string>
+    <string name="shortcut_p1">Power Saving</string>
+    <string name="shortcut_p1_long">Profile - Power Saving</string>
+    <string name="shortcut_p2">Balanced</string>
+    <string name="shortcut_p2_long">Profile - Balanced</string>
+    <string name="shortcut_p3">Performance</string>
+    <string name="shortcut_p3_long">Profile - Performance</string>
+    <string name="shortcut_p4">Turbo</string>
+    <string name="shortcut_p4_long">Profile - Turbo</string>
+    <string name="device_unsupport">Your device doesn\'t support this feature!</string>
+    <string name="addin_fullscreen_on">Immersive experience</string>
+    <string name="addin_fullscreen_on_desc">Auto-hide status bar and navigation bar</string>
+    <string name="addin_flyme_static_blur">Reduce Flyme6 blur</string>
+    <string name="addin_flyme_static_blur_desc">Disable Flyme6 notification center blur to reduce lag on low-end Meizu devices during gaming/video. May also save battery. Requires reboot.</string>
+    <string name="addin_miui_hide_search">MIUI9: Remove search in notification center</string>
+    <string name="addin_miui_hide_search_desc">Hide search box in MIUI9 notification center. Takes effect after reboot.</string>
+    <string name="addin_dpi">DPI / Resolution</string>
+    <string name="addin_dpi_desc">Customize DPI or resolution. May prevent device from booting properly or cause UI errors</string>
+    <string name="addin_deviceinfo">Device info</string>
+    <string name="addin_deviceinfo_desc">Disguise device via build.prop changes. Some phones may fail to boot or experience bugs</string>
+    <string name="addin_mac">Change MAC (Method 1)</string>
+    <string name="addin_mac_desc">Customize WiFi MAC address. Only supports some devices</string>
+    <string name="addin_mac_2">Change MAC (Method 2)</string>
+    <string name="addin_mac_desc_2">Customize WiFi MAC address. Only supports some devices; better for Android Q</string>
+    <string name="addin_force_dex_compile">Force dex2oat compilation</string>
+    <string name="addin_force_dex_compile_desc">Compile apps with dex2oat to reduce runtime CPU and RAM usage. Compilation may take 30 minutes; recompilation needed after system updates!</string>
+    <string name="addin_dexopt_helpinfo">Since Android N, apps are no longer fully dex-compiled during installation to save space and speed up installation, causing runtime slowdowns. Enabling "Compile" will use speed mode during installation — installation becomes slower but runtime smoother (~20% faster, no game FPS gain).\n\nFor example, Douyu TV on Oreo: base.odex is only 6.8MB fresh-installed, grows to 103MB after compilation.\n\nHowever, many Chinese apps use hot-update tech — they download and render latest code at runtime, which is the main cause of slow startup. dex2oat doesn\'t help these apps!</string>
+    <string name="addin_dex2oat_helplink">https://source.android.com/devices/tech/dalvik/jit-compiler</string>
+    <string name="addin_pm_dexopt">App install dex2oat policy</string>
+    <string name="addin_pm_dexopt_desc">For Android N+, adjust PackageManager dex2oat policy during install. Requires reset after system updates.</string>
+    <string name="addin_wifi">View saved WiFi</string>
+    <string name="addin_wifi_desc">Parse wpa_supplicant.conf or WifiConfigStore.xml in /data/misc/wifi</string>
+    <string name="addin_bpc">Performance Boost Config trimming</string>
+    <string name="addin_bpc_desc">Disable some options in Performance Boost Config to avoid CPU being boosted frequently (saves battery). Keeps app-launch boost, slight UX degradation. Requires reboot!</string>
+    <string name="addin_continue">Continue</string>
+    <string name="swap_on_close">Closing SWAP — this may be slow</string>
+    <string name="swap_current_state">Current state:</string>
     <string name="swap_memory_info">Memory Info</string>
     <string name="swap_vmstat">VM Stat</string>
     <string name="swap_io">SWAP IO</string>
-    <string name="swap_swappiness_desc">说明：\n数值越高会越积极的使用SWAP，此设置对流畅度的影响难以感知，酌情调整即可~</string>
+    <string name="swap_swappiness_desc">Note:\nHigher values use SWAP more aggressively. Impact on smoothness is hard to perceive — tune as you like~</string>
     <string name="swap_swappiness">Swappiness</string>
     <string name="swap_zram">ZRAM</string>
-    <string name="swap_zram_adjustment">调整</string>
-    <string name="swap_zram_desc">说明： ZRAM是SWAP的一种实现。可用内存变得不足时，会对内存中的部分数据进行压缩。但CPU会因此变得繁忙~</string>
-    <string name="swap_zram_comp_options">压缩算法</string>
-    <string name="swap_zram_comp_algorithm_wran">更改未生效</string>
-    <string name="swap_zram_comp_algorithm_wran_desc">ZRAM正在使用中，现在无法更改压缩算法。\n\n如需让设置生效，请点击下方的“调整”按钮</string>
+    <string name="swap_zram_adjustment">Adjust</string>
+    <string name="swap_zram_desc">Note: ZRAM is a SWAP implementation. When memory is low, part of memory data is compressed. CPU gets busier~</string>
+    <string name="swap_zram_comp_options">Compression algorithm</string>
+    <string name="swap_zram_comp_algorithm_wran">Change not applied</string>
+    <string name="swap_zram_comp_algorithm_wran_desc">ZRAM is in use; cannot change compression algorithm now.\n\nTo apply, tap "Adjust" below</string>
     <string name="swap_swap">Swapfile</string>
-    <string name="swap_create">创建</string>
-    <string name="swap_start">启动</string>
-    <string name="swap_stop">关闭</string>
-    <string name="swap_delete">删除</string>
-    <string name="swap_zram_preferred">用完ZRAM再使用</string>
-    <string name="swap_zram_equitable">与ZRAM同时使用</string>
-    <string name="swap_swap_preferred">优先于ZRAM使用</string>
-    <string name="swap_use_loop">挂载为回环设备</string>
-    <string name="swap_use_loop_desc">如果不开启此项也能正常使用SWAP，就没必要开。\n\n除非是无法启动SWAP，或启动SWAP后手机死机，才需要开启此选项！\n\n例如：小米的SDM845机型在Android9.0，需要勾选此项才能正常使用SWAP</string>
-    <string name="swap_swap_desc">说明： Swapfile类似于Windows的虚拟内存，交换效率受限于磁盘性能。请勿在小容量或空间不足的手机上使用此功能，以防闪存老化过快！</string>
-    <string name="swap_auto_start">开机自启(要允许Scene自启动)</string>
-    <string name="swap_auto_start_desc">注意：你需要允许Scene自启动，下次开机才会生效！</string>
-    <string name="swap_zram_stat">ZRAM 状态</string>
-    <string name="swap_outside_module">外部附加(Magisk)模块</string>
-    <string name="swap_outside_module_desc">您已安装Magisk框架，建议使用附加模块最新版本增强SWAP控制的可靠性，附加主要作用如下：</string>
-    <string name="swap_outside_effect1">1.提高手机重启后还原ZRAM、Swapfile设置的速度</string>
-    <string name="swap_outside_effect2">2.根据设备RAM容量调整LMK参数，加强后台留存能力</string>
-    <string name="swap_outside_effect3">3.调整VM参数，提高ZRAM、Swapfile使用积极性</string>
-    <string name="swap_module_install_desc">模块下载后，请自行在Magisk Manager中刷入,并重启手机！</string>
-    <string name="swap_zram_stat_desc">ZRAM的压缩率通常在20~45%之间</string>
-    <string name="swap_zram_stat_format">数据压缩算法：%s\n原始数据大小：%s\n压缩后的大小：%s\n物理内存占用：%s\n最高内存占用：%s\n内存占用限制：%s\n压缩率　　　：%s</string>
-    <string name="swap_zram_stat_format2">数据压缩算法：%s\n原始数据大小：%s\n压缩后的大小：%s\n压缩率　　　：%s</string>
-    <string name="swap_zram_writback_stat">ZRAM Writeback\n回写块：%s\n已回写：%dMB\n总读取：%dMB\n总回写：%dMB</string>
-    <string name="swap_zram_compact_algorithm">压缩算法</string>
-    <string name="swap_state_undefined">未创建</string>
-    <string name="swap_state_created">未启动</string>
-    <string name="swap_state_using">使用中</string>
+    <string name="swap_create">Create</string>
+    <string name="swap_start">Start</string>
+    <string name="swap_stop">Stop</string>
+    <string name="swap_delete">Delete</string>
+    <string name="swap_zram_preferred">Use after ZRAM</string>
+    <string name="swap_zram_equitable">Use with ZRAM</string>
+    <string name="swap_swap_preferred">Use before ZRAM</string>
+    <string name="swap_use_loop">Mount as loop device</string>
+    <string name="swap_use_loop_desc">If SWAP works without this, no need to enable.\n\nOnly enable if SWAP fails to start, or the phone freezes after starting SWAP!\n\nExample: Xiaomi SDM845 on Android 9 needs this enabled for SWAP to work</string>
+    <string name="swap_swap_desc">Note: Swapfile is like Windows virtual memory; swap efficiency is limited by disk speed. Do NOT use on low-storage phones to avoid fast flash wear!</string>
+    <string name="swap_auto_start">Auto-start on boot (requires Scene auto-start)</string>
+    <string name="swap_auto_start_desc">Note: You need to allow Scene to auto-start for this to work on next boot!</string>
+    <string name="swap_zram_stat">ZRAM status</string>
+    <string name="swap_outside_module">External Magisk module</string>
+    <string name="swap_outside_module_desc">You have Magisk installed. It\'s recommended to use the latest add-on module for better SWAP reliability. The module:</string>
+    <string name="swap_outside_effect1">1. Speeds up restoring ZRAM/Swapfile settings after reboot</string>
+    <string name="swap_outside_effect2">2. Adjusts LMK params based on RAM to improve background retention</string>
+    <string name="swap_outside_effect3">3. Adjusts VM params to make ZRAM/Swapfile more active</string>
+    <string name="swap_module_install_desc">After downloading, flash the module in Magisk Manager and reboot!</string>
+    <string name="swap_zram_stat_desc">ZRAM compression ratio is typically 20-45%</string>
+    <string name="swap_zram_stat_format">Compression: %s\nOriginal size: %s\nCompressed size: %s\nPhysical usage: %s\nPeak usage: %s\nLimit: %s\nRatio: %s</string>
+    <string name="swap_zram_stat_format2">Compression: %s\nOriginal size: %s\nCompressed size: %s\nRatio: %s</string>
+    <string name="swap_zram_writback_stat">ZRAM Writeback\nWriteback blocks: %s\nWritten back: %dMB\nTotal read: %dMB\nTotal write: %dMB</string>
+    <string name="swap_zram_compact_algorithm">Compression algorithm</string>
+    <string name="swap_state_undefined">Not created</string>
+    <string name="swap_state_created">Not started</string>
+    <string name="swap_state_using">In use</string>
     <string name="extra_free_kbytes">extra_free_kbytes(KB)</string>
-    <string name="extra_free_kbytes_desc">此值指定Linux内核会额外保留多少物理内存，当内存不足时会立即开始压缩内存到SWAP/ZRAM，在可用内存回升到合理范围之前设备会明显变得缓慢\n\n简单地说extra_free_kbytes设置越大，则内存回收(swap或杀死进程)越积极，但不建议设置过大，以免浪费物理内存而加重磁盘/处理器负担！</string>
+    <string name="extra_free_kbytes_desc">Specifies extra physical memory kept by the Linux kernel. When memory is low, compression to SWAP/ZRAM starts immediately; until memory recovers, the device slows down noticeably.\n\nSimply put, higher extra_free_kbytes = more aggressive memory reclaim (swap or kill), but don\'t set too high to avoid wasting physical memory and overloading disk/CPU!</string>
     <string name="watermark_scale_factor">watermark_scale_factor</string>
-    <string name="watermark_scale_factor_desc">数值范围为0~1000，其中1000表示10%，表示内存水位线low/min/high三个数值之间各相差(物理RAM容量的)10%。\n\n例如(我的手机)：\npageSize=4KB\nmanaged=1951743(pages)\nmin_free_kbytes=10900(KB)\nwatermark_scale_factor=500\n\n此时min值为\n10900(KB)/4(PageSize)=2725(pages)\nlow值大约是\n1951743*5%+2725≈100312(pages)\nhigh值大约是\n1951743*10%+2725≈197899(pages)\n注：最终的low、high值，可能受extra_free_kbytes影响而偏大\n\n这个例子中，\nmin=2725=10MB\nlow=100312≈392MB\nhigh=197899≈773MB\n\n意味着，内存低于392M便会开始回收内存，直到可用内存高于773MB~</string>
-
-    <string name="on_execute_please_wait">正在执行操作，请稍等…</string>
-    <string name="please_wait">请稍等…</string>
-    <string name="executed">操作已完成！</string>
-    <string name="file_creating">创建文件中</string>
-    <string name="zram_resizing">正在调整，请耐心等候…</string>
-    <string name="priority">优先级</string>
-    <string name="order">顺序</string>
-    <string name="used">已用</string>
-    <string name="size">大小</string>
-    <string name="type">类型</string>
-    <string name="path">路径</string>
-    <string name="battery_low">电量过低，请及时充电！</string>
-    <string name="sorry">抱歉</string>
-    <string name="powersave">省电模式</string>
-    <string name="balance">均衡模式</string>
-    <string name="performance">性能模式</string>
-    <string name="fast">极速模式</string>
-    <string name="powersave_short">省电</string>
-    <string name="balance_short">均衡</string>
-    <string name="performance_short">性能</string>
-    <string name="fast_short">极速</string>
-    <string name="app_selected_none">一个应用也没有选中！</string>
-    <string name="help">帮助</string>
-    <string name="warn">警告</string>
-    <string name="more">了解更多</string>
-    <string name="not_support_config">未找到可用的模式配置脚本</string>
-    <string name="not_support_config_desc">应用没有自带适用于你手机的性能配置脚本。你可以选择“在线获取脚本”看看是否有适于你手机的配置可供下载，或选择“了解更多”查看自定义配置教程！</string>
-    <string name="first_start_select_config">首次使用，先选择配置偏好</string>
-    <string name="config_online_options">选择在线脚本库</string>
-    <string name="online_config_v1">yc9559定制v1</string>
-    <string name="online_config_v2">yc9559定制v2</string>
-
-    <string name="config_installed">配置安装成功！</string>
+    <string name="watermark_scale_factor_desc">Range 0-1000; 1000 means 10%, indicating the difference between low/min/high watermarks as % of RAM.\n\nExample (my phone):\npageSize=4KB\nmanaged=1951743(pages)\nmin_free_kbytes=10900(KB)\nwatermark_scale_factor=500\n\nmin=10900/4=2725(pages)\nlow≈1951743*5%+2725≈100312(pages)\nhigh≈1951743*10%+2725≈197899(pages)\nNote: final low/high may be affected by extra_free_kbytes\n\nIn this example:\nmin=2725=10MB\nlow=100312≈392MB\nhigh=197899≈773MB\n\nMeaning: memory reclaim starts below 392MB until it exceeds 773MB~</string>
+    <string name="on_execute_please_wait">Executing, please wait…</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="executed">Done!</string>
+    <string name="file_creating">Creating file</string>
+    <string name="zram_resizing">Adjusting, please be patient…</string>
+    <string name="priority">Priority</string>
+    <string name="order">Order</string>
+    <string name="used">Used</string>
+    <string name="size">Size</string>
+    <string name="type">Type</string>
+    <string name="path">Path</string>
+    <string name="battery_low">Battery low, please charge!</string>
+    <string name="sorry">Sorry</string>
+    <string name="powersave">Power Saving</string>
+    <string name="balance">Balanced</string>
+    <string name="performance">Performance</string>
+    <string name="fast">Turbo</string>
+    <string name="powersave_short">Saver</string>
+    <string name="balance_short">Bal</string>
+    <string name="performance_short">Perf</string>
+    <string name="fast_short">Turbo</string>
+    <string name="app_selected_none">No app selected!</string>
+    <string name="help">Help</string>
+    <string name="warn">Warning</string>
+    <string name="more">Learn more</string>
+    <string name="not_support_config">No usable mode config script found</string>
+    <string name="not_support_config_desc">No performance config script for your phone is bundled. Choose "Online scripts" to see downloadable ones, or "Learn more" for custom config tutorial!</string>
+    <string name="first_start_select_config">First-time setup: choose a config preference</string>
+    <string name="config_online_options">Choose online script library</string>
+    <string name="online_config_v1">yc9559 custom v1</string>
+    <string name="online_config_v2">yc9559 custom v2</string>
+    <string name="config_installed">Config installed successfully!</string>
     <string name="ro_product_model">ro.product.model=</string>
     <string name="ro_product_brand">ro.product.brand=</string>
     <string name="ro_product_name">ro.product.name=</string>
     <string name="ro_product_device">ro.product.device=</string>
     <string name="ro_product_manufacturer">ro.product.manufacturer=</string>
-    <string name="auto_start">自启动</string>
-    <string name="boot_after_auto_modify">开机后自动修改</string>
-    <string name="core_control_helpinfo">部分手机具有CPU参数动态调整机制，会导致自定义的参数很快失效，此外，温控也会限制你调高CPU频率。</string>
-    <string name="shell_executor">脚本执行</string>
+    <string name="auto_start">Auto-start</string>
+    <string name="boot_after_auto_modify">Auto-modify after boot</string>
+    <string name="core_control_helpinfo">Some phones have dynamic CPU param adjustment, causing custom params to reset quickly. Thermal throttling may also limit CPU frequency.</string>
+    <string name="shell_executor">Script execution</string>
     <string-array name="default_powercfg_mode_options">
-        <item>省电模式</item>
-        <item>均衡模式</item>
-        <item>性能模式</item>
-        <item>极速模式</item>
+        <item>Power Saving</item>
+        <item>Balanced</item>
+        <item>Performance</item>
+        <item>Turbo</item>
     </string-array>
     <string-array name="sleep_powercfg_mode_options">
-        <item>省电模式</item>
-        <item>均衡模式</item>
-        <item>性能模式</item>
-        <item>保持状态</item>
+        <item>Power Saving</item>
+        <item>Balanced</item>
+        <item>Performance</item>
+        <item>Keep state</item>
     </string-array>
     <string-array name="powercfg_modes_filter">
-        <item>全部</item>
-        <item>省电</item>
-        <item>均衡</item>
-        <item>性能</item>
-        <item>极速</item>
-        <item>全局默认</item>
-        <item>保持状态</item>
+        <item>All</item>
+        <item>Saver</item>
+        <item>Balanced</item>
+        <item>Performance</item>
+        <item>Turbo</item>
+        <item>Global default</item>
+        <item>Keep state</item>
     </string-array>
     <string-array name="powercfg_apptype_filter">
-        <item>用户</item>
-        <item>系统</item>
-        <item>全部</item>
+        <item>User</item>
+        <item>System</item>
+        <item>All</item>
     </string-array>
-
     <string name="cgroup_mem_title">cgroup</string>
     <string-array name="cgroup_mem_options">
-        <item>系统默认</item>
-        <item>普通应用</item>
-        <item>优先内存</item>
-        <item>重要进程</item>
-        <item>受限后台</item>
-        <item>回收内存</item>
+        <item>System default</item>
+        <item>Normal app</item>
+        <item>Memory preferred</item>
+        <item>Important process</item>
+        <item>Restricted background</item>
+        <item>Reclaim memory</item>
     </string-array>
     <string-array name="cgroup_mem_values">
-        <item></item>
-        <item>scene_lock</item>
-        <item>scene_perf</item>
-        <item>scene_fg</item>
-        <item>scene_bg</item>
-        <item>scene_cache</item>
+        <item></item><item>scene_lock</item><item>scene_perf</item><item>scene_fg</item><item>scene_bg</item><item>scene_cache</item>
     </string-array>
-
-    <string name="title_activity_timing_task">定时任务</string>
-    <string name="title_activity_trigger">触发器</string>
-    <string name="title_activity_file_selector">请选择文件</string>
-    <string name="title_activity_folder_selector">请长按选择目录</string>
-    <string name="config_save_fail">配置保存失败！</string>
-    <string name="boot_success">已完成开机自启动</string>
-    <string name="notice_channel_boot">自启动提示</string>
-    <string name="notice_channel_task">Scene计划任务</string>
-    <string name="notice_task_completed">Scene计划任务完成</string>
-    <string name="boot_script_running">正在执行自启动脚本…</string>
-    <string name="boot_cpuset">设置CPU控制参数…</string>
-    <string name="boot_modify_mac">修改MAC地址…</string>
-    <string name="boot_charge_booster">开启充电加速…</string>
-    <string name="boot_use_powercfg">应用调度配置…</string>
-    <string name="boot_resize_zram">设置ZRAM容量…</string>
-    <string name="boot_swapon">启动SWAP…</string>
-    <string name="boot_lmk">调整LMK参数…</string>
-    <string name="boot_freeze">冻结偏见应用…</string>
-
-    <string name="flash_confirm">确认刷入？</string>
-
-    <string name="scene_addin_miss">高级设定 组件缺失</string>
-    <string name="scene_addin_miss_desc">请从Scene下载安装“Scene-高级设定”，并将其设为允许后台自启动！</string>
-    <string name="scene_addin_sync_fail">从“Scene-高级设定”组件同步Xposed设定失败！</string>
-    <string name="scene_install_autoclick">安装点击</string>
-    <string name="scene_install_autoclick_desc">安装第三方应用时，自动帮你点“下一步”和“安装”</string>
-    <string name="scene_install_skip_ad">跳过广告</string>
-    <string name="scene_install_skip_ad_desc">自动点击“跳过”按钮，可帮你自动跳过一些开屏广告，但会降低系统性能且存在误点现象\n* 只在简体中文下使用才有较好的效果</string>
-    <string name="scene_install_skip_ad_precise">跳过广告+</string>
-    <string name="scene_install_skip_ad_precise_desc">使用云端记录的一些按钮数据，来点击特殊的跳过按钮</string>
-    <string name="scene_install_skip_ad_warn">广告流量是一些软件开发者/商的重要收入来源，如果你的时间不是非常紧迫，那么建议您浏览并点击你喜欢的广告内容^_^</string>
-    <string name="perf_opt">动态响应</string>
-    <string name="permission_modify_fail">修改权限失败！</string>
-    <string name="scene_need_write_sys_settings">请先授权允许Scene“修改系统设置”！</string>
-    <string name="start_app_fail">启动应用失败！</string>
-    <string name="scene_need_notic_listing">请先授权允许Scene“通知使用权限”！</string>
-
+    <string name="title_activity_timing_task">Scheduled Tasks</string>
+    <string name="title_activity_trigger">Triggers</string>
+    <string name="title_activity_file_selector">Choose file</string>
+    <string name="title_activity_folder_selector">Long-press to choose folder</string>
+    <string name="config_save_fail">Config save failed!</string>
+    <string name="boot_success">Auto-start on boot completed</string>
+    <string name="notice_channel_boot">Auto-start notification</string>
+    <string name="notice_channel_task">Scene scheduled tasks</string>
+    <string name="notice_task_completed">Scene scheduled task completed</string>
+    <string name="boot_script_running">Running auto-start script…</string>
+    <string name="boot_cpuset">Setting CPU control params…</string>
+    <string name="boot_modify_mac">Modifying MAC address…</string>
+    <string name="boot_charge_booster">Enabling charge boost…</string>
+    <string name="boot_use_powercfg">Applying scheduling config…</string>
+    <string name="boot_resize_zram">Setting ZRAM size…</string>
+    <string name="boot_swapon">Enabling SWAP…</string>
+    <string name="boot_lmk">Adjusting LMK params…</string>
+    <string name="boot_freeze">Freezing biased apps…</string>
+    <string name="flash_confirm">Confirm flashing?</string>
+    <string name="scene_addin_miss">Advanced Settings component missing</string>
+    <string name="scene_addin_miss_desc">Download "Scene-Advanced Settings" from Scene, install it, and allow it to auto-start in background!</string>
+    <string name="scene_addin_sync_fail">Failed to sync Xposed settings from "Scene-Advanced Settings"!</string>
+    <string name="scene_install_autoclick">Auto-click</string>
+    <string name="scene_install_autoclick_desc">Auto-tap "Next" and "Install" when installing third-party apps</string>
+    <string name="scene_install_skip_ad">Skip ads</string>
+    <string name="scene_install_skip_ad_desc">Auto-click "Skip" to bypass splash ads, but may reduce performance and cause misclicks\n* Works best in Simplified Chinese</string>
+    <string name="scene_install_skip_ad_precise">Skip ads+</string>
+    <string name="scene_install_skip_ad_precise_desc">Uses cloud-recorded button data to click special skip buttons</string>
+    <string name="scene_install_skip_ad_warn">Ad revenue is an important income for developers. If you\'re not in a hurry, please browse and click ads you like ^_^</string>
+    <string name="perf_opt">Dynamic response</string>
+    <string name="permission_modify_fail">Permission modification failed!</string>
+    <string name="scene_need_write_sys_settings">Please grant "modify system settings" permission to Scene first!</string>
+    <string name="start_app_fail">Failed to start app!</string>
+    <string name="scene_need_notic_listing">Please grant "notification usage" permission to Scene first!</string>
     <string name="scene_create_shortcut_action">com.omarea.vtools.CreateShortcut</string>
     <string name="scene_speed_compile">com.omarea.vtools.SpeedCompile</string>
     <string name="scene_speed_profile_compile">com.omarea.vtools.SpeedProfileCompile</string>
     <string name="scene_everything_compile">com.omarea.vtools.EverythingCompile</string>
     <string name="scene_reset_compile">com.omarea.vtools.ResetCompile</string>
-
-    <string name="scene_contract_title">风险声明</string>
-    <string name="scene_contract">Scene是一款面向玩机爱好者的应用，使用它需要拥有优秀的视力、阅读理解能力和良好的心态。\n\n使用过程中可能出现无法预料的错误，导致数据丢失，甚至无法正常开机。\n\n请务必不要在你[用于工作]或者存有[重要数据]的手机上使用，以免造成损失！\n\n使用过程中，务必仔细阅读提示信息谨慎操作，不要轻易拨动不理解的功能选项！\n\n此外，本应用作者不保证会提供使用帮助和故障恢复建议！</string>
-    <string name="permission_float">请先为Scene授权显示悬浮窗权限！</string>
-    <string name="lmk_optimize_desc">让Scene根据你的RAM容量，自动调整LMK参数，从而增强后台能力（可能导致低内存时卡顿）。如需恢复，请关闭该选项重启手机，如需开机后自动设置，请允许工具箱自启动</string>
-    <string name="lmk_optimize">低内存优化</string>
+    <string name="scene_contract_title">Risk Notice</string>
+    <string name="scene_contract">Scene is a power-user app requiring good vision, reading comprehension, and a calm mindset.\n\nUnexpected errors may occur, causing data loss or failure to boot.\n\nDo NOT use on phones [used for work] or containing [critical data], to avoid losses!\n\nCarefully read all prompts and don\'t flip unfamiliar options!\n\nAlso, the author doesn\'t guarantee providing usage help or recovery advice!</string>
+    <string name="permission_float">Please grant Scene the "show floating windows" permission first!</string>
+    <string name="lmk_optimize_desc">Let Scene automatically tune LMK params based on your RAM to improve background retention (may cause lag when low on memory). Disable and reboot to restore, or allow auto-start to apply on boot</string>
+    <string name="lmk_optimize">Low-memory optimization</string>
     <string name="low_memory_killer">Low Memory Killer</string>
-    <string name="busybox_nonsupport">Scene集成的Busybox不支持你当前系统，请自己下载并安装Busybox</string>
-    <string name="dex2oat_completed">dex2oat编译完成</string>
-    <string name="dex2oat_compiling">dex2oat编译中</string>
-    <string name="dex2oat_reset_running">dex2oat重置中</string>
-
-    <string name="freeze_shortcut_lost">快捷方式丢失</string>
-    <string name="freeze_shortcut_lost_desc">以下被加入偏见模式的应用，启动快捷方式已丢失或未创建成功，是否立即重新创建？</string>
-    <string name="freeze_disable_completed">已冻结应用 ×</string>
-    <string name="freeze_enable_completed">已解冻应用 √</string>
-    <string name="freeze_shortcut_add_success">创建完成</string>
-    <string name="freeze_shortcut_add_fail">创建失败</string>
-    <string name="freeze_batch_add">批量添加快捷方式</string>
-    <string name="freeze_batch_add_wran">批量添加快捷方式可能会失败，你可以长按应用图标，发送单个快捷方式到桌面！</string>
-    <string name="freeze_entrance_changed">√ 图标显示状态已切换</string>
-    <string name="freeze_shortcut_delete_desc">你可能需要手动删除已添加的快捷方式！</string>
-    <string name="wallpaper_rw_permission">需要“读写本地存储”的权限才能使用系统壁纸作为软件背景</string>
-
-    <string name="shortcut_create_fail">快捷方式创建失败</string>
-    <string name="shortcut_create_success">已发送创建快捷方式申请</string>
-    <string name="shortcut_create">添加快捷方式</string>
-    <string name="shortcut_create_desc">你希望将“%s”添加到桌面，方便快速使用吗？</string>
-    <string name="ushortcut_nsupported">该功能不支持添加快捷方式</string>
-    <string name="btn_copy_output">复制输出</string>
-    <string name="copy_success">复制成功</string>
-    <string name="copy_fail">复制失败</string>
+    <string name="busybox_nonsupport">Scene\'s bundled Busybox doesn\'t support your system. Please download and install Busybox yourself</string>
+    <string name="dex2oat_completed">dex2oat compilation completed</string>
+    <string name="dex2oat_compiling">dex2oat compiling</string>
+    <string name="dex2oat_reset_running">Resetting dex2oat</string>
+    <string name="freeze_shortcut_lost">Shortcut lost</string>
+    <string name="freeze_shortcut_lost_desc">The following apps in bias mode lost their shortcuts. Recreate now?</string>
+    <string name="freeze_disable_completed">Froze app ×</string>
+    <string name="freeze_enable_completed">Unfroze app √</string>
+    <string name="freeze_shortcut_add_success">Created</string>
+    <string name="freeze_shortcut_add_fail">Creation failed</string>
+    <string name="freeze_batch_add">Batch add shortcuts</string>
+    <string name="freeze_batch_add_wran">Batch add may fail. You can long-press the app icon to send a single shortcut to the home screen!</string>
+    <string name="freeze_entrance_changed">√ Icon display state toggled</string>
+    <string name="freeze_shortcut_delete_desc">You may need to manually delete the added shortcuts!</string>
+    <string name="wallpaper_rw_permission">"Read/write local storage" permission is required to use system wallpaper as the app background</string>
+    <string name="shortcut_create_fail">Shortcut creation failed</string>
+    <string name="shortcut_create_success">Shortcut request sent</string>
+    <string name="shortcut_create">Add shortcut</string>
+    <string name="shortcut_create_desc">Add "%s" to home screen for quick access?</string>
+    <string name="ushortcut_nsupported">Shortcut creation not supported here</string>
+    <string name="copy_success">Copied</string>
+    <string name="copy_fail">Copy failed</string>
     <string name="promote_link">https://tinyurl.com/y3j7vszf</string>
-
-    <string name="kr_write_external_storage">需要读写外置存储权限</string>
-    <string name="kr_page_before_load">准备解析配置</string>
-    <string name="kr_page_loading">解析配置中</string>
-    <string name="kr_page_after_load">配置解析完成</string>
-    <string name="kr_page_sh_invalid">无效的页面配置输出</string>
-    <string name="kr_page_sh_file_permission">指定的配置文件不存在或无读取权限</string>
-    <string name="kr_page_load_fail">页面加载失败</string>
-    <string name="kr_page_load_success">页面加载成功</string>
-    <string name="kr_auto_run_item_losted">指定项已丢失</string>
-
-    <string name="magisk_install_desc">Scene对系统的大部分修改操作，现在都可以通过Magisk模块的形式进行了。但是，你先要同意Scene在你的手机上自动安装附加模块，并重启手机（建议）！</string>
-    <string name="magisk_install_title">Scene附加模块</string>
-    <string name="cache_recycle">回收缓存</string>
-    <string name="dynamic_auto_disabled">未检测到配置文件，已自动禁用动态响应！</string>
-    <string name="app_donate">打赏</string>
-    <string name="app_nav">功能</string>
-    <string name="app_home">概览</string>
-
-    <string name="system_scene_next_task">下一个任务</string>
-    <string name="system_scene_resume_charge">恢复充电</string>
-    <string name="system_scene_battery_left">电量低于</string>
-    <string name="system_scene_battery_right">电量高于</string>
-    <string name="system_scene_stop_charge">停止充电</string>
-    <string name="system_scene_task_canceled">任务已取消</string>
-    <string name="system_scene_timing_task">我的定时任务</string>
-    <string name="system_scene_trigger">我的触发器</string>
-
-
+    <string name="kr_write_external_storage">Needs external storage read/write permission</string>
+    <string name="kr_page_before_load">Preparing to parse config</string>
+    <string name="kr_page_loading">Parsing config</string>
+    <string name="kr_page_after_load">Config parse done</string>
+    <string name="kr_page_sh_invalid">Invalid page config output</string>
+    <string name="kr_page_sh_file_permission">Specified config file doesn\'t exist or is unreadable</string>
+    <string name="kr_page_load_fail">Page load failed</string>
+    <string name="kr_page_load_success">Page loaded</string>
+    <string name="kr_auto_run_item_losted">Item is gone</string>
+    <string name="magisk_install_desc">Most system modifications in Scene can now be done via Magisk module. But you must first agree to auto-install the add-on module and reboot (recommended)!</string>
+    <string name="magisk_install_title">Scene add-on module</string>
+    <string name="cache_recycle">Reclaim cache</string>
+    <string name="dynamic_auto_disabled">No config file detected; dynamic response auto-disabled!</string>
+    <string name="app_donate">Donate</string>
+    <string name="app_nav">Features</string>
+    <string name="app_home">Overview</string>
+    <string name="system_scene_next_task">Next task</string>
+    <string name="system_scene_resume_charge">Resume charging</string>
+    <string name="system_scene_battery_left">Battery below</string>
+    <string name="system_scene_battery_right">Battery above</string>
+    <string name="system_scene_stop_charge">Stop charging</string>
+    <string name="system_scene_task_canceled">Task canceled</string>
+    <string name="system_scene_timing_task">My scheduled tasks</string>
+    <string name="system_scene_trigger">My triggers</string>
     <string-array name="process_sort_modes">
-        <item>按CPU</item>
-        <item>按RES</item>
-        <item>按PID</item>
-        <item>不排序</item>
+        <item>By CPU</item><item>By RES</item><item>By PID</item><item>No sort</item>
     </string-array>
     <string-array name="process_filter">
-        <item>普通应用</item>
-        <item>系统应用</item>
-        <item>所有应用</item>
-        <item>其它进程</item>
-        <item>所有类型</item>
+        <item>User apps</item><item>System apps</item><item>All apps</item><item>Other processes</item><item>All types</item>
     </string-array>
-
     <string-array name="start_dir_options">
-        <!--<item>/data/adb/modules/scene_systemless/vendor/etc</item>
-        <item>/data/thermal/config</item>
-        <item>/data/vendor/thermal/config</item>
-        <item>/data/adb/modules</item>-->
-        <item>/sdcard</item>
-        <item>/system/etc</item>
-        <item>/vendor/etc</item>
+        <item>/sdcard</item><item>/system/etc</item><item>/vendor/etc</item>
     </string-array>
-
-
     <string name="power_shutdown_cmd">sync;svc power shutdown || reboot -p;</string>
     <string name="power_reboot_cmd">sync;svc power reboot || reboot;</string>
     <string name="power_hot_reboot_cmd">sync;am restart || busybox killall system_server;</string>
     <string name="power_fastboot_cmd">sync;reboot bootloader;</string>
     <string name="power_recovery_cmd">sync;reboot recovery;</string>
     <string name="power_emergency_cmd">sync;reboot edl;</string>
-    <string name="miui_thermal_desc">点击右上角的菜单，选择并编辑温控文件，编辑完成后点击保存~\n\n注意：随着安卓系统不断更新，要修改系统分区变得越来越困难，可能修改无法成功保存，或重启后即被自动还原，建议使用magisk模块来完成温控修改！\n\n温控文件一般是在/system/etc或/vendor/etc目录下，名称以“thermal”开头，后缀为“.conf”</string>
-    <string name="monitor_process_unsupported">进程管理器暂未兼容你的手机！</string>
+    <string name="miui_thermal_desc">Tap the top-right menu to select and edit thermal files; save when done~\n\nNote: As Android evolves, modifying system partitions gets harder. Changes may fail to save or get reverted after reboot. Using a Magisk module is recommended!\n\nThermal files are usually in /system/etc or /vendor/etc, named starting with "thermal" and ending in ".conf"</string>
+    <string name="monitor_process_unsupported">Process Manager doesn\'t support your phone yet!</string>
 </resources>

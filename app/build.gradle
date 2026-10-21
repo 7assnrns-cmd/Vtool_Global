@@ -17,12 +17,12 @@ android {
     compileSdkVersion 30
     buildToolsVersion '29.0.2'
     defaultConfig {
-        resConfigs "zh"
+        resConfigs "en", "ar", "ja", "zh"
         applicationId "com.omarea.vtools"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 202111131
-        versionName "4.7.3"
+        versionCode 1
+        versionName "1.0.0"
         externalNativeBuild {
             cmake {
                 cppFlags ""

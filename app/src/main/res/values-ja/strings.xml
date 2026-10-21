@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="require_restart_app">変更を反映するにはアプリを再起動してください</string>
+    <integer name="opacity">0</integer>
+    <string name="format_hh_mm">%02d:%02d</string>
+    <string name="btn_cancel">キャンセル</string>
+    <string name="btn_not_now">後で</string>
+    <string name="btn_delete">削除</string>
+    <string name="btn_dontshow">次回から表示しない</string>
+    <string name="btn_confirm">OK</string>
+    <string name="btn_no">いいえ</string>
+    <string name="btn_yes">はい</string>
+    <string name="btn_continue">続行</string>
+    <string name="btn_modify_confirm">変更を確定</string>
+    <string name="btn_help">ヘルプ</string>
+    <string name="btn_iknow">了解</string>
+    <string name="btn_exit">終了</string>
+    <string name="btn_hide">非表示</string>
+    <string name="btn_resume">再開</string>
+    <string name="btn_skip">スキップ</string>
+    <string name="btn_retry">再試行</string>
+    <string name="btn_apply">適用</string>
+    <string name="btn_reboot">再起動</string>
+    <string name="btn_resume_selected">選択を再開</string>
+    <string name="btn_copy_output">出力をコピー</string>
+    <string name="error_su_timeout">待機がタイムアウトしました。ROOTマネージャー(Magisk/SuperSU)がバックグラウンドで動作していることを確認し、再試行してください！\n\n「認証マネージャー」の自動起動を妨げていないこと、バックグラウンドポップアップやフローティングウィンドウの権限が許可されていることを確認してください。認証ダイアログが表示されない場合は、スマートフォンを再起動してもう一度お試しください！\n</string>
+    <string name="error_root">申し訳ありませんが、ROOT権限を取得できませんでした</string>
+    <string name="error_root_desc">ROOT権限がないと、多くの機能が使用できなくなります。\n許可の通知を見逃した、またはダイアログが表示されなかった場合は、ROOTマネージャーを開き、手動でSceneにROOT権限の使用を許可してください~</string>
+    <string name="question_install_busybox">Busyboxをインストールしますか？</string>
+    <string name="question_install_busybox_desc">お使いのデバイスにはbusyboxがインストールされていないようです。これがないとSceneが動作しません。今すぐインストールしますか（Systemの変更が必要）？</string>
+    <string name="share_link">Sceneを試してみてください。なかなか良いですよ。ダウンロード先：\n http://vtools.omarea.com/</string>
+    <string name="app_name">Scene4</string>
+    <string name="app_name_short">Scene4</string>
+    <string name="app_name_mode_switch">Scene - クイックモード切替</string>
+    <string name="accessibility_service_description">Scene拡張サービス\nこのサービスを有効にすると以下が使えます：\n\n1. 動的応答（前面アプリに応じてパフォーマンスを調整）。\n\n2. 自動動作（画面オフ時のネットワーク切替、アプリ切替時のプロセス回収）。\n\n3. 自動インストール（サードパーティアプリのインストール時に「次へ」を自動タップ）。</string>
+    <string name="backup_action_title_boot">Bootをバックアップ</string>
+    <string name="backup_action_desc_boot">現在のBootをimgとしてバックアップし、/sdcard/boot.imgにコピー</string>
+    <string name="restore_action_title_boot">Bootを書き込み</string>
+    <string name="restore_action_desc_boot">boot.imgを選択して書き込み</string>
+    <string name="backup_action_title_rec">Recoveryをバックアップ</string>
+    <string name="backup_action_desc_rec">現在のRecoveryをimgとしてバックアップし、/sdcard/recovery.imgにコピー</string>
+    <string name="restore_action_title_rec">Recoveryを書き込み</string>
+    <string name="restore_action_desc_rec">recovery.imgを選択して書き込み</string>
+    <string name="backup_action_title_dtbo">DTBOパーティションをバックアップ</string>
+    <string name="backup_action_desc_dtbo">DTBOパーティションをimgとしてエクスポートし、/sdcard/dtbo.imgにコピー</string>
+    <string name="restore_action_title_dtbo">DTBOイメージを書き込み</string>
+    <string name="restore_action_desc_dtbo">dtbo.imgを選択して書き込み</string>
+    <string name="backup_action_title_persist">Persistパーティションをバックアップ</string>
+    <string name="backup_action_desc_persist">Persistパーティションをimgとしてエクスポートし、/sdcard/persist.imgにコピー</string>
+    <string name="restore_action_title_persist">Persistイメージを書き込み</string>
+    <string name="restore_action_desc_persist">persist.imgを選択して書き込み</string>
+    <string name="backup_file_exists">ファイルを上書きしますか？</string>
+    <string name="backup_img_exists">/sdcard/%s.imgは既に存在します。上書きしますか？</string>
+    <string name="backup_space_small">ストレージ容量が不足しています！最低200MBの空き容量を確保してください。</string>
+    <string name="autobooster_tab_details">ブラックリスト設定</string>
+    <string name="autobooster_tab_system_scene">システムシーン</string>
+    <string name="auto_clear_ignore_chager">充電中は無視</string>
+    <string name="auto_clear_ignore_chager_desc">充電中は画面オフ動作を充電完了まで遅延させる</string>
+    <string name="settings_disable_selinux">SELinux パーミッシブモード</string>
+    <string name="settings_disable_selinux_desc">SELinuxをパーミッシブモードに切り替えます（一部のアプリは[SELinux無効化]と呼びます）。SELinuxの状態はSceneには影響しませんが、パーミッシブモードを有効にするとフリーズや再起動が発生する可能性があります！</string>
+    <string name="settings_theme">テーマ</string>
+    <string name="settings_theme_wallpaper">壁紙を使用</string>
+    <string name="settings_theme_wallpaper_desc">システム壁紙をウィンドウの背景として使用し、半透明のUIで表示</string>
+    <string name="settings_debug_layer">デバッグウィンドウ</string>
+    <string name="settings_debug_layer_desc">Sceneのフォアグラウンドアプリ検出ログを表示</string>
+    <string name="settings_help_icon">ヘルプアイコン</string>
+    <string name="settings_help_icon_desc">機能の横にヘルプ（？）アイコンを表示</string>
+    <string name="settings_auto_exit">エラー時に自動終了</string>
+    <string name="settings_auto_exit_desc">エラー発生時に自動でプロセスを終了し、フリーズや白画面を回避</string>
+    <string name="settings_logcat_title">エラーログ</string>
+    <string name="settings_logcat_desc">Sceneがクラッシュした場合、下のボタンをタップしてlogcatログを取得し、開発者に送信して問題解決にご協力ください</string>
+    <string name="settings_black_notification">黒い通知背景</string>
+    <string name="settings_black_notification_desc">ダークモード時にSceneの常駐通知を黒背景で表示（通常は不要）</string>
+    <string name="menu_home">概要</string>
+    <string name="menu_paypal">寄付</string>
+    <string name="menu_scene_mode">シーンモード</string>
+    <string name="menu_app_scene">アプリシーン</string>
+    <string name="menu_system_scene">システムシーン</string>
+    <string name="menu_auto_click">自動タップ</string>
+    <string name="menu_cpu_modes">パフォーマンスプロファイル</string>
+    <string name="menu_freeze">アプリバイアス</string>
+    <string name="menu_battery_stats">バッテリー統計</string>
+    <string name="menu_core_control">CPU制御</string>
+    <string name="menu_sundry">その他設定</string>
+    <string name="menu_additional">アドオン</string>
+    <string name="menu_applictions">アプリ管理</string>
+    <string name="menu_swap">SWAP</string>
+    <string name="menu_battery">充電制御</string>
+    <string name="menu_charge">充電統計</string>
+    <string name="menu_custom_command">カスタムコマンド</string>
+    <string name="menu_processes">プロセス管理</string>
+    <string name="menu_fps_chart">FPSチャート</string>
+    <string name="menu_app_magisk">Magiskヘルパー</string>
+    <string name="menu_gesture">ジェスチャーナビ</string>
+    <string name="menu_xposed_app">アプリ設定</string>
+    <string name="menu_xposed_global">グローバル設定</string>
+    <string name="menu_filter">画面フィルター</string>
+    <string name="menu_img">バックアップ/復元</string>
+    <string name="menu_qq">チャット</string>
+    <string name="menu_menu_title">フィードバック</string>
+    <string name="menu_share">アプリを共有</string>
+    <string name="menu_miui_thermal">MIUI温度制御</string>
+    <string name="system">システム</string>
+    <string name="accessibility_running">アクセシビリティサービスが有効です</string>
+    <string name="accessibility_stoped">タップしてアクセシビリティサービスを有効にします</string>
+    <string name="battery_title">バッテリー：</string>
+    <string name="battery_title_desc1">「充電速度」と「充電保護」を使用するには、Sceneをバックグラウンドで実行し続けてください！</string>
+    <string name="battery_reality_limit">実際の電流制限：</string>
+    <string name="battery_pd_allowed">USB-PD急速充電</string>
+    <string name="battery_pd_allowed_desc">スマートフォンは互換性に基づいてUSB-PDを有効にするか判断します。手動設定は不要です。手動切替は充電を遅くする可能性があるため、手動変更は禁止されています！</string>
+    <string name="battery_pd_active_state">現在の状態：</string>
+    <string name="battery_pd_active_1">PD急速充電モード有効</string>
+    <string name="battery_pd_active_0">PD急速充電モード無効</string>
+    <string name="battery_auto_boot_desc">OK。再起動後に自動で有効にするには、Sceneの自動起動を許可してください！</string>
+    <string name="battery_qc_rehoot_desc">充電ブーストサービスが無効になりました。デフォルト設定を復元するには再起動が必要な場合があります！</string>
+    <string name="battery_pd_active_unknown">不明</string>
+    <string name="battery_uevent_title">$ bms/uevent</string>
+    <string name="battery_usb_uevent_title">$ usb/uevent</string>
+    <string name="battery_night_mode_time">%02d:%02d</string>
+    <string name="battery_night_mode">動的充電速度</string>
+    <string name="battery_night_mode_desc">満充電に近づくと速度を落とす\n\n夜間は積極的に充電速度を下げる</string>
+    <string name="battery_time_get_up">起床時刻</string>
+    <string name="battery_time_sleep">就寝時刻</string>
+    <string name="battery_manual_control">手動制御</string>
+    <string name="battery_charge_disable">充電を無効化</string>
+    <string name="battery_charge_resume">充電を再開</string>
+    <string name="battery_usage_history">バッテリー使用履歴</string>
+    <string name="battery_view_history">履歴を表示</string>
+    <string name="battery_delete_history">履歴を削除</string>
+    <string name="battery_bp">充電保護</string>
+    <string name="battery_bp_desc">指定レベルで充電を停止\n\n注意：長期間使用するとバッテリー表示が不正確になる可能性があります</string>
+    <string name="battery_bp_level_desc">レベル制限（%）</string>
+    <string name="battery_qc_charger">充電速度</string>
+    <string name="battery_bp_status">%d%%で停止、%d%%未満で再開</string>
+    <string name="battery_qc_charger_desc">充電速度制限を調整します。無闇に上げても実際の効果は得られません。有効範囲内で調整してください。\n\n注意：上限値は参考値です。実際の充電速度が優先されます！</string>
+    <string name="battery_charge_disabled">充電が無効化されました！</string>
+    <string name="battery_charge_resumed">充電が再開されました！</string>
+    <string name="battery_forgery">データ偽装</string>
+    <string name="battery_forgery_ratio">バッテリーレベル</string>
+    <string name="battery_forgery_full_now">フル容量</string>
+    <string name="battery_step_charge">段階的充電</string>
+    <string name="battery_step_charge_desc">システムがレベルに応じて充電速度制限を段階的に調整し、バッテリー寿命の延長に役立ちます\n\n通常はデフォルト設定のままを推奨</string>
+    <string name="battery_exec_option">充電速度の目的</string>
+    <string-array name="battery_exec_options">
+        <item>速度を下げる</item>
+        <item>充電を加速</item>
+        <item>最大限充電</item>
+    </string-array>
+    <string name="battery_exec_desc">Sceneは選択に応じて異なるタイミングで速度を変更します：\n\n速度を下げる：充電器接続時とバッテリー％変化時のみ速度を再設定\n充電を加速：バッテリー状態変化時と充電器接続時に速度を再設定\n最大限充電：「充電を加速」のロジックに加え毎秒速度を再設定</string>
+    <string name="battery_status_discharging">[放電中]</string>
+    <string name="battery_status_charging">[充電中]</string>
+    <string name="battery_status_full">[満充電]</string>
+    <string name="battery_status_not_charging">[未充電]</string>
+    <string name="battery_status_unknown">[状態不明]</string>
+    <string name="battery_status_sum">（約 %smAh 充電済み）</string>
+    <string name="electricity_unit_adj">電流単位のキャリブレーション</string>
+    <string name="electricity_unit_adj_desc">現在の充電速度を以下で除算：</string>
+    <string name="electricity_unit_as">表示形式：</string>
+    <string name="electricity_unit_adj_desc2">充電は正、放電は負で表示されるべきです</string>
+    <string name="applist_warn">提供されているアプリデータバックアップ機能は、システムに統合されたbusybox/toyboxが必要です。tar+gz圧縮を使用し（サポートされていればpigzを使用）、「/data/data/パッケージ名」配下のデータのみバックアップします。すべてのシステムやアプリとの互換性は保証されません。\n\nバックアップは/sdcard/backups/appsに保存されます（Android 11以降は非対応）</string>
+    <string name="dialog_addin_device_warn">デバイス情報に特殊記号を入力しないでください！\n[アプリ変数]モジュールのデバイスコードと互換性があります。コピーしてこのウィンドウを再度開くと使用できます！</string>
+    <string name="dialog_addin_device_desc">変更後、「復元」→「確認」をタップして変更前のデバイス情報を復元できます。Sceneをアンインストールするとバックアップされたデバイス情報が失われるため、必ず復元してからアンインストールしてください！\n\nまたは、完全なROMを再書き込みしてデバイス情報を復元することもできます！\n\nDualBootPatcherマルチブート環境では絶対にこの機能を使用しないでください！！！</string>
+    <string name="dialog_addin_device_inner">プリセットテンプレート</string>
+    <string name="title_activity_shortcut">クイック起動</string>
+    <string name="title_activity_freeze">アプリバイアス</string>
+    <string name="title_activity_online">Scene-Online</string>
+    <string name="shortcut_disabled">利用不可</string>
+    <string name="shortcut_p1">省電力モード</string>
+    <string name="shortcut_p1_long">プロファイル - 省電力</string>
+    <string name="shortcut_p2">バランスモード</string>
+    <string name="shortcut_p2_long">プロファイル - バランス</string>
+    <string name="shortcut_p3">パフォーマンスモード</string>
+    <string name="shortcut_p3_long">プロファイル - パフォーマンス</string>
+    <string name="shortcut_p4">ターボモード</string>
+    <string name="shortcut_p4_long">プロファイル - ターボ</string>
+    <string name="device_unsupport">お使いのデバイスはこの機能に対応していません！</string>
+    <string name="addin_fullscreen_on">没入型体験</string>
+    <string name="addin_fullscreen_on_desc">ステータスバーとナビゲーションバーを自動非表示</string>
+    <string name="addin_flyme_static_blur">Flyme6のぼかしを軽減</string>
+    <string name="addin_flyme_static_blur_desc">Flyme6の通知センターのリアルタイムぼかしを無効化し、低スペックMeizu端末でのゲームや動画再生時のラグを軽減。省電力効果もあるかもしれません。要再起動。</string>
+    <string name="addin_miui_hide_search">MIUI9：通知センターの検索を削除</string>
+    <string name="addin_miui_hide_search_desc">MIUI9通知センターの検索ボックスを非表示。再起動後に反映。</string>
+    <string name="addin_dpi">DPI・解像度変更</string>
+    <string name="addin_dpi_desc">DPIや解像度をカスタマイズ。正常に起動できなくなる、またはUIエラーが発生する可能性があります</string>
+    <string name="addin_deviceinfo">機種情報変更</string>
+    <string name="addin_deviceinfo_desc">build.prop変更で機種を偽装。一部のスマートフォンは起動できなくなるか、バグが発生する可能性があります</string>
+    <string name="addin_mac">MACアドレス変更（方法1）</string>
+    <string name="addin_mac_desc">WiFiのMACアドレスをカスタマイズ。一部のデバイスのみ対応</string>
+    <string name="addin_mac_2">MACアドレス変更（方法2）</string>
+    <string name="addin_mac_desc_2">WiFiのMACアドレスをカスタマイズ。一部のデバイスのみ対応、Android Q向け</string>
+    <string name="addin_force_dex_compile">dex2oatコンパイルを強制</string>
+    <string name="addin_force_dex_compile_desc">アプリをdex2oatでコンパイルし、実行時のCPUとRAM使用量を削減。コンパイルには約30分かかる場合があり、システム更新後は再コンパイルが必要です！</string>
+    <string name="addin_dexopt_helpinfo">Android N以降、アプリのインストール時にdexを完全コンパイルしなくなり、インストールは速くなりましたが実行速度が低下しています。この機能で「コンパイル」を選択すると、インストール時にspeedモードでコンパイルします。インストールは遅くなりますが、実行時はよりスムーズになります（約20%向上、ゲームFPSは向上しません！）。\n\nOreo上の闘魚TVクライアントを例にとると、新規インストール時のbase.odexはわずか6.8MBですが、コンパイル後は103MBに増加します。\n\nただし、中国の多くのアプリはホットアップデート技術を採用しており、実行時にサーバーから最新コードをダウンロードして解析・レンダリングしています。これがアプリの起動が遅い、または起動後カクつく主な原因です。そのためdex2oatコンパイルではこうしたアプリに明確なパフォーマンス向上は見込めません！</string>
+    <string name="addin_dex2oat_helplink">https://source.android.com/devices/tech/dalvik/jit-compiler</string>
+    <string name="addin_pm_dexopt">アプリインストール時のdex2oatポリシー</string>
+    <string name="addin_pm_dexopt_desc">Android N+向け。PackageManagerのアプリインストール時のdex2oatコンパイルポリシーを調整します。システム更新後は再設定が必要です</string>
+    <string name="addin_wifi">保存されたWiFiを表示</string>
+    <string name="addin_wifi_desc">/data/misc/wifiのwpa_supplicant.confまたはWifiConfigStore.xmlを解析</string>
+    <string name="addin_bpc">Performance Boost Config簡素化</string>
+    <string name="addin_bpc_desc">Performance Boost Configの一部オプションを無効化し、CPUが頻繁に高クロックになるのを防ぎます（省電力）。アプリ起動時のブーストは保持され、体感はわずかに低下します。要再起動！</string>
+    <string name="addin_continue">続行</string>
+    <string name="swap_on_close">SWAPを終了しています。時間がかかる場合があります</string>
+    <string name="swap_current_state">現在の状態：</string>
+    <string name="swap_memory_info">メモリ情報</string>
+    <string name="swap_vmstat">VM Stat</string>
+    <string name="swap_io">SWAP IO</string>
+    <string name="swap_swappiness_desc">説明：\n値が高いほどSWAPを積極的に使用します。スムーズさへの影響は感知しにくいので、適宜調整してください~</string>
+    <string name="swap_swappiness">Swappiness</string>
+    <string name="swap_zram">ZRAM</string>
+    <string name="swap_zram_adjustment">調整</string>
+    <string name="swap_zram_desc">説明：ZRAMはSWAPの実装の一つです。メモリが不足すると、メモリ内の一部データを圧縮します。ただしCPUの負荷が高まります~</string>
+    <string name="swap_zram_comp_options">圧縮アルゴリズム</string>
+    <string name="swap_zram_comp_algorithm_wran">変更未適用</string>
+    <string name="swap_zram_comp_algorithm_wran_desc">ZRAMが使用中のため、現在は圧縮アルゴリズムを変更できません。\n\n設定を反映するには下の「調整」ボタンをタップしてください</string>
+    <string name="swap_swap">Swapfile</string>
+    <string name="swap_create">作成</string>
+    <string name="swap_start">開始</string>
+    <string name="swap_stop">停止</string>
+    <string name="swap_delete">削除</string>
+    <string name="swap_zram_preferred">ZRAM使用後に使用</string>
+    <string name="swap_zram_equitable">ZRAMと同時使用</string>
+    <string name="swap_swap_preferred">ZRAMより優先</string>
+    <string name="swap_use_loop">ループデバイスとしてマウント</string>
+    <string name="swap_use_loop_desc">これを有効にしなくてもSWAPが正常に動作する場合は、有効にする必要はありません。\n\nSWAPが起動できない、または起動後にスマートフォンがフリーズする場合のみ有効にしてください！\n\n例：Android 9のXiaomi SDM845モデルはこのオプションを有効にしないとSWAPが正常に動作しません</string>
+    <string name="swap_swap_desc">説明：SwapfileはWindowsの仮想メモリに似ており、スワップ効率はディスク性能に依存します。容量の小さいスマートフォンや空き容量が不足しているスマートフォンでは使用しないでください。フラッシュの劣化が早まります！</string>
+    <string name="swap_auto_start">起動時に自動開始（Sceneの自動起動を許可する必要あり）</string>
+    <string name="swap_auto_start_desc">注意：次回起動時に有効にするには、Sceneの自動起動を許可する必要があります！</string>
+    <string name="swap_zram_stat">ZRAM状態</string>
+    <string name="swap_outside_module">外部Magiskモジュール</string>
+    <string name="swap_outside_module_desc">Magiskがインストールされています。最新のアドオンモジュールを使用してSWAP制御の信頼性を高めることをお勧めします。モジュールの主な効果：</string>
+    <string name="swap_outside_effect1">1. 再起動後のZRAM/Swapfile設定復元を高速化</string>
+    <string name="swap_outside_effect2">2. デバイスのRAM容量に応じてLMKパラメータを調整し、バックグラウンド保持能力を強化</string>
+    <string name="swap_outside_effect3">3. VMパラメータを調整し、ZRAM/Swapfileの使用を積極化</string>
+    <string name="swap_module_install_desc">ダウンロード後、Magisk Managerでモジュールを書き込み、スマートフォンを再起動してください！</string>
+    <string name="swap_zram_stat_desc">ZRAMの圧縮率は通常20〜45%です</string>
+    <string name="swap_zram_stat_format">圧縮アルゴリズム：%s\n元データサイズ：%s\n圧縮後サイズ：%s\n物理メモリ使用量：%s\n最大使用量：%s\n使用制限：%s\n圧縮率　　　　：%s</string>
+    <string name="swap_zram_stat_format2">圧縮アルゴリズム：%s\n元データサイズ：%s\n圧縮後サイズ：%s\n圧縮率　　　　：%s</string>
+    <string name="swap_zram_writback_stat">ZRAM Writeback\nライトバックブロック：%s\n書込済：%dMB\n総読込：%dMB\n総書込：%dMB</string>
+    <string name="swap_zram_compact_algorithm">圧縮アルゴリズム</string>
+    <string name="swap_state_undefined">未作成</string>
+    <string name="swap_state_created">未起動</string>
+    <string name="swap_state_using">使用中</string>
+    <string name="extra_free_kbytes">extra_free_kbytes(KB)</string>
+    <string name="extra_free_kbytes_desc">この値はLinuxカーネルが追加で保持する物理メモリ量を指定します。メモリ不足時に直ちにSWAP/ZRAMへのメモリ圧縮を開始し、空きメモリが適切な範囲に回復するまでデバイスが明らかに遅くなります。\n\n簡単に言うと、extra_free_kbytesが大きいほどメモリ回収（スワップまたはプロセス終了）が積極的になりますが、物理メモリを浪費しディスク/プロセッサ負荷を高めるため、大きく設定しすぎないでください！</string>
+    <string name="watermark_scale_factor">watermark_scale_factor</string>
+    <string name="watermark_scale_factor_desc">値の範囲は0〜1000で、1000は10%を意味し、low/min/highの3つのメモリ水位値がそれぞれ（物理RAM容量の）10%ずつ差があることを示します。\n\n例（私のスマートフォン）：\npageSize=4KB\nmanaged=1951743(pages)\nmin_free_kbytes=10900(KB)\nwatermark_scale_factor=500\n\nこの時min値は\n10900(KB)/4(PageSize)=2725(pages)\nlow値は約\n1951743*5%+2725≈100312(pages)\nhigh値は約\n1951743*10%+2725≈197899(pages)\n注：最終的なlow、high値はextra_free_kbytesの影響で大きくなる可能性があります\n\nこの例では、\nmin=2725=10MB\nlow=100312≈392MB\nhigh=197899≈773MB\n\nつまり、メモリが392MB以下になると回収が始まり、773MBを超えるまで続きます~</string>
+    <string name="on_execute_please_wait">実行中です。しばらくお待ちください…</string>
+    <string name="please_wait">しばらくお待ちください…</string>
+    <string name="executed">完了しました！</string>
+    <string name="file_creating">ファイル作成中</string>
+    <string name="zram_resizing">調整中です。しばらくお待ちください…</string>
+    <string name="priority">優先度</string>
+    <string name="order">順序</string>
+    <string name="used">使用済み</string>
+    <string name="size">サイズ</string>
+    <string name="type">タイプ</string>
+    <string name="path">パス</string>
+    <string name="battery_low">バッテリー残量が少なくなっています。充電してください！</string>
+    <string name="sorry">申し訳ありません</string>
+    <string name="powersave">省電力モード</string>
+    <string name="balance">バランスモード</string>
+    <string name="performance">パフォーマンスモード</string>
+    <string name="fast">ターボモード</string>
+    <string name="powersave_short">省電力</string>
+    <string name="balance_short">バランス</string>
+    <string name="performance_short">パフォーマンス</string>
+    <string name="fast_short">ターボ</string>
+    <string name="app_selected_none">アプリが選択されていません！</string>
+    <string name="help">ヘルプ</string>
+    <string name="warn">警告</string>
+    <string name="more">詳細を見る</string>
+    <string name="not_support_config">使用可能なモード設定スクリプトが見つかりません</string>
+    <string name="not_support_config_desc">お使いのスマートフォン用のパフォーマンス設定スクリプトは同梱されていません。「オンラインスクリプト」でダウンロード可能なものを確認するか、「詳細を見る」でカスタム設定チュートリアルを確認してください！</string>
+    <string name="first_start_select_config">初回起動：設定の好みを選択してください</string>
+    <string name="config_online_options">オンラインスクリプトライブラリを選択</string>
+    <string name="online_config_v1">yc9559カスタムv1</string>
+    <string name="online_config_v2">yc9559カスタムv2</string>
+    <string name="config_installed">設定のインストールに成功しました！</string>
+    <string name="ro_product_model">ro.product.model=</string>
+    <string name="ro_product_brand">ro.product.brand=</string>
+    <string name="ro_product_name">ro.product.name=</string>
+    <string name="ro_product_device">ro.product.device=</string>
+    <string name="ro_product_manufacturer">ro.product.manufacturer=</string>
+    <string name="auto_start">自動起動</string>
+    <string name="boot_after_auto_modify">起動後に自動変更</string>
+    <string name="core_control_helpinfo">一部のスマートフォンにはCPUパラメータを動的に調整する機構があり、カスタムパラメータがすぐに失効します。また、温度制御によりCPU周波数の引き上げが制限されることもあります。</string>
+    <string name="shell_executor">スクリプト実行</string>
+    <string-array name="default_powercfg_mode_options">
+        <item>省電力モード</item>
+        <item>バランスモード</item>
+        <item>パフォーマンスモード</item>
+        <item>ターボモード</item>
+    </string-array>
+    <string-array name="sleep_powercfg_mode_options">
+        <item>省電力モード</item>
+        <item>バランスモード</item>
+        <item>パフォーマンスモード</item>
+        <item>状態を維持</item>
+    </string-array>
+    <string-array name="powercfg_modes_filter">
+        <item>すべて</item>
+        <item>省電力</item>
+        <item>バランス</item>
+        <item>パフォーマンス</item>
+        <item>ターボ</item>
+        <item>グローバルデフォルト</item>
+        <item>状態を維持</item>
+    </string-array>
+    <string-array name="powercfg_apptype_filter">
+        <item>ユーザー</item>
+        <item>システム</item>
+        <item>すべて</item>
+    </string-array>
+    <string name="cgroup_mem_title">cgroup</string>
+    <string-array name="cgroup_mem_options">
+        <item>システムデフォルト</item>
+        <item>通常アプリ</item>
+        <item>メモリ優先</item>
+        <item>重要プロセス</item>
+        <item>制限付きバックグラウンド</item>
+        <item>メモリ回収</item>
+    </string-array>
+    <string-array name="cgroup_mem_values">
+        <item></item><item>scene_lock</item><item>scene_perf</item><item>scene_fg</item><item>scene_bg</item><item>scene_cache</item>
+    </string-array>
+    <string name="title_activity_timing_task">スケジュールタスク</string>
+    <string name="title_activity_trigger">トリガー</string>
+    <string name="title_activity_file_selector">ファイルを選択</string>
+    <string name="title_activity_folder_selector">長押しでフォルダを選択</string>
+    <string name="config_save_fail">設定の保存に失敗しました！</string>
+    <string name="boot_success">起動時の自動起動が完了しました</string>
+    <string name="notice_channel_boot">自動起動通知</string>
+    <string name="notice_channel_task">Sceneスケジュールタスク</string>
+    <string name="notice_task_completed">Sceneスケジュールタスクが完了しました</string>
+    <string name="boot_script_running">自動起動スクリプトを実行中…</string>
+    <string name="boot_cpuset">CPU制御パラメータを設定中…</string>
+    <string name="boot_modify_mac">MACアドレスを変更中…</string>
+    <string name="boot_charge_booster">充電ブーストを有効化中…</string>
+    <string name="boot_use_powercfg">スケジューリング設定を適用中…</string>
+    <string name="boot_resize_zram">ZRAMサイズを設定中…</string>
+    <string name="boot_swapon">SWAPを有効化中…</string>
+    <string name="boot_lmk">LMKパラメータを調整中…</string>
+    <string name="boot_freeze">バイアスアプリをフリーズ中…</string>
+    <string name="flash_confirm">書き込みを確認しますか？</string>
+    <string name="scene_addin_miss">詳細設定コンポーネントが見つかりません</string>
+    <string name="scene_addin_miss_desc">Sceneから「Scene-詳細設定」をダウンロード・インストールし、バックグラウンド自動起動を許可してください！</string>
+    <string name="scene_addin_sync_fail">「Scene-詳細設定」コンポーネントからXposed設定の同期に失敗しました！</string>
+    <string name="scene_install_autoclick">自動タップ</string>
+    <string name="scene_install_autoclick_desc">サードパーティアプリのインストール時に「次へ」と「インストール」を自動タップ</string>
+    <string name="scene_install_skip_ad">広告スキップ</string>
+    <string name="scene_install_skip_ad_desc">「スキップ」ボタンを自動タップしてスプラッシュ広告をスキップしますが、パフォーマンスが低下し誤タップが発生する可能性があります\n* 簡体字中国語でのみ良好に動作します</string>
+    <string name="scene_install_skip_ad_precise">広告スキップ+</string>
+    <string name="scene_install_skip_ad_precise_desc">クラウドに記録されたボタンデータを使用して特殊なスキップボタンをタップ</string>
+    <string name="scene_install_skip_ad_warn">広告収入は一部のソフトウェア開発者/販売者の重要な収入源です。お急ぎでない場合は、お好みの広告コンテンツを閲覧・クリックしてください ^_^</string>
+    <string name="perf_opt">動的応答</string>
+    <string name="permission_modify_fail">権限の変更に失敗しました！</string>
+    <string name="scene_need_write_sys_settings">先にSceneに「システム設定の変更」権限を許可してください！</string>
+    <string name="start_app_fail">アプリの起動に失敗しました！</string>
+    <string name="scene_need_notic_listing">先にSceneに「通知の使用」権限を許可してください！</string>
+    <string name="scene_create_shortcut_action">com.omarea.vtools.CreateShortcut</string>
+    <string name="scene_speed_compile">com.omarea.vtools.SpeedCompile</string>
+    <string name="scene_speed_profile_compile">com.omarea.vtools.SpeedProfileCompile</string>
+    <string name="scene_everything_compile">com.omarea.vtools.EverythingCompile</string>
+    <string name="scene_reset_compile">com.omarea.vtools.ResetCompile</string>
+    <string name="scene_contract_title">リスクに関する声明</string>
+    <string name="scene_contract">Sceneはパワーユーザー向けのアプリで、優れた視力、読解力、そして冷静な心が求められます。\n\n予期しないエラーが発生し、データが失われる、または正常に起動できなくなる可能性があります。\n\n[仕事用]または[重要なデータ]が保存されたスマートフォンでは絶対に使用しないでください。損害を避けるためです！\n\n使用中は必ず注意メッセージをよく読み、慎重に操作し、理解できない機能オプションを軽々しく切り替えないでください！\n\nまた、本アプリの作者は使用サポートや障害復旧に関する提案を提供することを保証しません！</string>
+    <string name="permission_float">先にSceneにフローティングウィンドウ表示権限を許可してください！</string>
+    <string name="lmk_optimize_desc">SceneがRAM容量に基づいてLMKパラメータを自動調整し、バックグラウンド保持能力を強化します（メモリ不足時にカクつく可能性があります）。復元するにはこのオプションを無効にして再起動してください。起動時に自動設定するにはツールボックスの自動起動を許可してください</string>
+    <string name="lmk_optimize">低メモリ最適化</string>
+    <string name="low_memory_killer">Low Memory Killer</string>
+    <string name="busybox_nonsupport">Sceneに統合されたBusyboxはお使いのシステムに対応していません。ご自身でBusyboxをダウンロード・インストールしてください</string>
+    <string name="dex2oat_completed">dex2oatコンパイルが完了しました</string>
+    <string name="dex2oat_compiling">dex2oatコンパイル中</string>
+    <string name="dex2oat_reset_running">dex2oatリセット中</string>
+    <string name="freeze_shortcut_lost">ショートカットが失われました</string>
+    <string name="freeze_shortcut_lost_desc">バイアスモードに追加された以下のアプリの起動ショートカットが失われたか作成に失敗しました。今すぐ再作成しますか？</string>
+    <string name="freeze_disable_completed">アプリを凍結しました ×</string>
+    <string name="freeze_enable_completed">アプリの凍結を解除しました √</string>
+    <string name="freeze_shortcut_add_success">作成完了</string>
+    <string name="freeze_shortcut_add_fail">作成失敗</string>
+    <string name="freeze_batch_add">ショートカットを一括追加</string>
+    <string name="freeze_batch_add_wran">一括追加は失敗する可能性があります。アプリアイコンを長押しして、単一のショートカットをホーム画面に送信できます！</string>
+    <string name="freeze_entrance_changed">√ アイコン表示状態を切り替えました</string>
+    <string name="freeze_shortcut_delete_desc">追加したショートカットを手動で削除する必要があるかもしれません！</string>
+    <string name="wallpaper_rw_permission">システム壁紙をアプリの背景として使用するには、「ローカルストレージの読み書き」権限が必要です</string>
+    <string name="shortcut_create_fail">ショートカットの作成に失敗しました</string>
+    <string name="shortcut_create_success">ショートカット作成リクエストを送信しました</string>
+    <string name="shortcut_create">ショートカットを追加</string>
+    <string name="shortcut_create_desc">「%s」をホーム画面に追加して素早くアクセスしますか？</string>
+    <string name="ushortcut_nsupported">この機能はショートカット追加に対応していません</string>
+    <string name="copy_success">コピーしました</string>
+    <string name="copy_fail">コピーに失敗しました</string>
+    <string name="promote_link">https://tinyurl.com/y3j7vszf</string>
+    <string name="kr_write_external_storage">外部ストレージの読み書き権限が必要です</string>
+    <string name="kr_page_before_load">設定解析の準備中</string>
+    <string name="kr_page_loading">設定を解析中</string>
+    <string name="kr_page_after_load">設定解析完了</string>
+    <string name="kr_page_sh_invalid">無効なページ設定出力</string>
+    <string name="kr_page_sh_file_permission">指定された設定ファイルが存在しないか、読み取り権限がありません</string>
+    <string name="kr_page_load_fail">ページの読み込みに失敗しました</string>
+    <string name="kr_page_load_success">ページの読み込みに成功しました</string>
+    <string name="kr_auto_run_item_losted">指定された項目が失われました</string>
+    <string name="magisk_install_desc">Sceneによるシステムへの大部分の変更は、Magiskモジュール形式で行えるようになりました。ただし、まずSceneがアドオンモジュールを自動インストールすることに同意し、スマートフォンを再起動する必要があります（推奨）！</string>
+    <string name="magisk_install_title">Sceneアドオンモジュール</string>
+    <string name="cache_recycle">キャッシュを回収</string>
+    <string name="dynamic_auto_disabled">設定ファイルが検出されないため、動的応答を自動的に無効化しました！</string>
+    <string name="app_donate">寄付</string>
+    <string name="app_nav">機能</string>
+    <string name="app_home">概要</string>
+    <string name="system_scene_next_task">次のタスク</string>
+    <string name="system_scene_resume_charge">充電を再開</string>
+    <string name="system_scene_battery_left">バッテリーが下回ったら</string>
+    <string name="system_scene_battery_right">バッテリーが上回ったら</string>
+    <string name="system_scene_stop_charge">充電を停止</string>
+    <string name="system_scene_task_canceled">タスクをキャンセルしました</string>
+    <string name="system_scene_timing_task">自分のスケジュールタスク</string>
+    <string name="system_scene_trigger">自分のトリガー</string>
+    <string-array name="process_sort_modes">
+        <item>CPU順</item><item>RES順</item><item>PID順</item><item>ソートなし</item>
+    </string-array>
+    <string-array name="process_filter">
+        <item>ユーザーアプリ</item><item>システムアプリ</item><item>すべてのアプリ</item><item>その他のプロセス</item><item>すべての種類</item>
+    </string-array>
+    <string-array name="start_dir_options">
+        <item>/sdcard</item><item>/system/etc</item><item>/vendor/etc</item>
+    </string-array>
+    <string name="power_shutdown_cmd">sync;svc power shutdown || reboot -p;</string>
+    <string name="power_reboot_cmd">sync;svc power reboot || reboot;</string>
+    <string name="power_hot_reboot_cmd">sync;am restart || busybox killall system_server;</string>
+    <string name="power_fastboot_cmd">sync;reboot bootloader;</string>
+    <string name="power_recovery_cmd">sync;reboot recovery;</string>
+    <string name="power_emergency_cmd">sync;reboot edl;</string>
+    <string name="miui_thermal_desc">右上のメニューをタップし、温度制御ファイルを選択・編集し、完了したら保存してください~\n\n注意：Androidシステムの更新に伴い、システムパーティションの変更はますます困難になっています。変更が正常に保存されない、または再起動後に自動的に元に戻される可能性があります。温度制御の変更にはMagiskモジュールの使用を推奨します！\n\n温度制御ファイルは通常/system/etcまたは/vendor/etcにあり、名前は「thermal」で始まり、拡張子は「.conf」です</string>
+    <string name="monitor_process_unsupported">プロセスマネージャーはお使いのスマートフォンにまだ対応していません！</string>
+</resources>

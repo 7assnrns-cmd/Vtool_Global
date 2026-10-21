@@ -1,3 +1,5 @@
+import com.omarea.vtools.LanguagePickerDialog
+import com.omarea.vtools.LocaleHelper
 package com.omarea.vtools.activities
 
 import android.app.ActivityManager
@@ -14,6 +16,14 @@ import com.omarea.vtools.R
 
 open class ActivityBase : AppCompatActivity() {
     public lateinit var themeMode: ThemeMode
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(LocaleHelper.wrap(newBase))
+    }
+
+    fun showLanguagePicker() {
+        LanguagePickerDialog().show(supportFragmentManager, "lang_picker")
+    }
+
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
 
