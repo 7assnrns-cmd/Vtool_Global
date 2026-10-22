@@ -17,12 +17,14 @@ object LocaleHelper {
         "zh" to "中文"
     )
 
-    fun getSaved(context: Context): String =
-        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+    fun getSaved(context: Context): String {
+        return context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
             .getString(KEY, DEFAULT) ?: DEFAULT
+    }
 
-    fun isFirstRun(context: Context): Boolean =
-        !context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).contains(KEY)
+    fun isFirstRun(context: Context): Boolean {
+        return !context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).contains(KEY)
+    }
 
     fun save(context: Context, lang: String) {
         context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
