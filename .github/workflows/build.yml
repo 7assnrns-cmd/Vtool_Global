@@ -1,21 +1,64 @@
-name: Build APK
-on: [push, workflow_dispatch]
+name: Build & Draft Release
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
     - name: Set up JDK 11
       uses: actions/setup-java@v4
       with:
         java-version: '11'
         distribution: 'temurin'
+        cache: gradle
+
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Build with Gradle
+
+    # 1. قراءة رقم الإصدار من build.gradle
+    - name: Extract Version Name
+      id: get_version
+      run: |
+        VERSION=$(grep "versionName" app/build.gradle | head -n 1 | cut -d '"' -f 2)
+        echo "APP_VERSION=$VERSION" >> $GITHUB_ENV
+        echo "تم اكتشاف الإصدار: v$VERSION"
+
+    # 2. بناء التطبيق
+    - name: Build release APK
       run: ./gradlew assembleRelease
-    - name: Upload APK
-      uses: actions/upload-artifact@v4
+
+    # 3. إنشاء مسودة الإصدار (Draft Release)
+    - name: Create Draft Release
+      uses: softprops/action-gh-release@v2
       with:
-        name: Vtool_Global-Fixed
-        path: app/build/outputs/apk/release/app-release.apk
+        tag_name: v${{ env.APP_VERSION }}
+        name: Vtool_Global v${{ env.APP_VERSION }} (مسودة)
+        body: |
+          ## إصدار Vtool_Global v${{ env.APP_VERSION }}
+          
+          **رقم البناء:** #${{ github.run_number }}
+          **آخر تحديث:** `${{ github.sha }}`
+          
+          ---
+          ### 📝 ملاحظات التحديث (اكتبها هنا قبل النشر):
+          - تحسينات في الترجمة (العربية، الإنجليزية، اليابانية).
+          - إصلاح مشكلة RTL (الواجهة تبقى LTR والنصوص عربية).
+          - إصلاح مكتشف الفريمات (FPS) ليقرأ مباشرة من النظام.
+          - إضافة زر تغيير اللغة.
+          
+          ---
+          ⚠️ **هذه مسودة. اضغط Publish Release عندما تكون جاهزاً.**
+        draft: true
+        prerelease: false
+        files: app/build/outputs/apk/release/app-release.apk
+        overwrite_files: true
