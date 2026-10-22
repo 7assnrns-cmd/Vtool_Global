@@ -94,6 +94,6 @@ class FpsUtils(private val keepShell: KeepShell = KeepShellPublic.secondaryKeepS
                 } catch (ex: java.lang.Exception) {
                 }
             }
-            return -0f
+            return 60.0f
         }
 }

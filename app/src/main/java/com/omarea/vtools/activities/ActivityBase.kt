@@ -1,9 +1,5 @@
 package com.omarea.vtools.activities
 
-import android.content.Context
-import com.omarea.vtools.LocaleHelper
-import com.omarea.vtools.LanguagePickerDialog
-
 import android.app.ActivityManager
 import android.content.Context
 import android.os.Bundle
@@ -14,6 +10,9 @@ import androidx.appcompat.widget.Toolbar
 import com.omarea.Scene
 import com.omarea.common.shell.KeepShellPublic
 import com.omarea.common.ui.ThemeMode
+import com.omarea.common.ui.ThemeSwitch
+import com.omarea.vtools.LocaleHelper
+import com.omarea.vtools.LanguagePickerDialog
 import com.omarea.vtools.R
 
 open class ActivityBase : AppCompatActivity() {
@@ -27,15 +26,14 @@ open class ActivityBase : AppCompatActivity() {
     }
 
     public lateinit var themeMode: ThemeMode
+
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
-
         this.themeMode = ThemeSwitch.switchTheme(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         this.themeMode = ThemeSwitch.switchTheme(this)
     }
 
@@ -47,8 +45,6 @@ open class ActivityBase : AppCompatActivity() {
     protected fun setBackArrow() {
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
-
-        // 显示返回按钮
         supportActionBar!!.setHomeButtonEnabled(true)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         toolbar.setNavigationOnClickListener {
