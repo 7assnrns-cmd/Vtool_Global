@@ -207,12 +207,17 @@ class ActivityMain : ActivityBase() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menu.add(0, 9999, 0, "🌐 Language / 语言").setShowAsAction(android.view.MenuItem.SHOW_AS_ACTION_NEVER)
         menuInflater.inflate(R.menu.main, menu)
         return true
     }
 
     //右上角菜单
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == 9999) {
+            showLanguagePicker()
+            return true
+        }
         when (item.itemId) {
             R.id.action_settings -> startActivity(Intent(this.applicationContext, ActivityOtherSettings::class.java))
             R.id.action_power -> DialogPower(this).showPowerMenu()

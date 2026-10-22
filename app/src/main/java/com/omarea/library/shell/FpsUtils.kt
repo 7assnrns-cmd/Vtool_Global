@@ -4,96 +4,78 @@ import com.omarea.common.shell.KeepShell
 import com.omarea.common.shell.KeepShellPublic
 import com.omarea.common.shell.RootFile.fileExists
 
-/**
- * 帧率检测
- */
 class FpsUtils(private val keepShell: KeepShell = KeepShellPublic.secondaryKeepShell) {
     private var fpsFilePath: String? = null
-    private var subStrCommand = "| awk '{print \$2}'"
-
-    private var fpsCommand2 = "service call SurfaceFlinger 1013"
-    private var lastTime = -1L
-    private var lastFrames = -1
+    private var useSurfaceFlinger = true
+    private var currentFpsValue = 0.0f
 
     val currentFps: String?
         get() {
-            // 优先使用GPU的内核级帧数数据
-            if (!fpsFilePath.isNullOrEmpty()) {
-                return keepShell.doCmdSync("cat $fpsFilePath $subStrCommand")
-            }
-            // 如果系统帧率不可用使用GPU的内核级帧数数据
-            else if (fpsFilePath == null) {
-                when {
-                    fileExists("/sys/class/drm/sde-crtc-0/measured_fps") -> {
-                        fpsFilePath = "/sys/class/drm/sde-crtc-0/measured_fps"
-                    }
-                    fileExists("/sys/class/graphics/fb0/measured_fps") -> {
-                        fpsFilePath = "/sys/class/graphics/fb0/measured_fps"
-                        subStrCommand = ""
-                    }
-                    else -> {
-                        fpsFilePath = ""
-                        val keepShell = KeepShell()
-                        Thread(Runnable {
-                            try {
-                                keepShell.doCmdSync("find /sys -name measured_fps 2>/dev/null")
-                                        .trim { it <= ' ' }.split("\n").filter { it.contains("crtc") }.min()?.run {
-                                            fpsFilePath = this
-                                        }
-
-                                if (fpsFilePath == null || fpsFilePath == "") {
-                                    keepShell.doCmdSync("find /sys -name fps 2>/dev/null")
-                                            .trim { it <= ' ' }.split("\n").filter { it.contains("crtc") }.min()?.run {
-                                                fpsFilePath = this
-                                            }
+            // 1. المحاولة عبر SurfaceFlinger --latency (الأدق لأندرويد 9+)
+            if (useSurfaceFlinger) {
+                try {
+                    val result = keepShell.doCmdSync("su -c 'dumpsys SurfaceFlinger --latency'").trim()
+                    if (result.isNotEmpty() && !result.contains("Permission denied")) {
+                        val lines = result.split("\n")
+                        var frameCount = 0
+                        var firstTime = 0L
+                        var lastTime = 0L
+                        // السطر الأول هو معدل التحديث (مثلاً 16ms لشاشة 60Hz)
+                        for (i in 1 until lines.size) {
+                            val parts = lines[i].trim().split(Regex("\\s+"))
+                            if (parts.size >= 2) {
+                                val vsync = parts[1].toLongOrNull() ?: 0L
+                                if (vsync > 0) {
+                                    if (firstTime == 0L) firstTime = vsync
+                                    lastTime = vsync
+                                    frameCount++
                                 }
-                                if (fpsFilePath == null) {
-                                    fpsFilePath = ""
-                                }
-                                keepShell.tryExit()
-                            } catch (ex: Exception) {
-                                fpsFilePath = ""
                             }
-                        }).start()
+                        }
+                        if (frameCount > 1 && lastTime > firstTime) {
+                            val timeDiffNanos = lastTime - firstTime
+                            val fps = (frameCount - 1) * 1_000_000_000.0f / timeDiffNanos
+                            if (fps > 0 && fps < 240) {
+                                currentFpsValue = fps
+                                return String.format("%.1f", fps)
+                            }
+                        }
+                    }
+                } catch (e: Exception) {
+                    useSurfaceFlinger = false
+                }
+            }
+
+            // 2. المحاولة عبر مسارات الكرنل (Kernel)
+            if (fpsFilePath == null) {
+                val paths = arrayOf(
+                    "/sys/class/drm/sde-crtc-0/measured_fps",
+                    "/sys/class/graphics/fb0/measured_fps"
+                )
+                for (path in paths) {
+                    if (fileExists(path)) {
+                        fpsFilePath = path
+                        break
                     }
                 }
             }
-            // 使用系统帧率
-            else if (fpsCommand2.isNotEmpty()) {
-                val result = keepShell.doCmdSync(fpsCommand2).trim()
-                if (result != "error" && !result.contains("Parcel")) {
-                    fpsCommand2 = ""
-                } else {
-                    try {
-                        val index = result.indexOf("(") + 1
-                        val frames = Integer.parseInt(result.substring(index, index + 8), 16)
-                        val time = System.currentTimeMillis()
-                        var fps = 0F
-                        if (lastTime > 0 && lastFrames > 0) {
-                            fps = (frames - lastFrames) * 1000.0f / (time - lastTime)
-                        }
-                        lastFrames = frames
-                        lastTime = time
-                        return String.format("%.1f", fps)
-                    } catch (ex: Exception) {
-                        if (!(lastTime > 0 && lastFrames > 0)) {
-                            fpsCommand2 = ""
-                        }
+            
+            if (!fpsFilePath.isNullOrEmpty()) {
+                try {
+                    val res = keepShell.doCmdSync("su -c 'cat $fpsFilePath'").trim()
+                    if (res.isNotEmpty() && res.toFloatOrNull() != null) {
+                        currentFpsValue = res.toFloat()
+                        return String.format("%.1f", currentFpsValue)
                     }
-                }
+                } catch (e: Exception) {}
             }
-            return null
+
+            return null // إرجاع null لكي تظهر "غير معروف" بدلاً من رقم ثابت خاطئ
         }
 
     val fps: Float
         get() {
-            val fpsStr = currentFps
-            if (fpsStr != null) {
-                try {
-                    return fpsStr.toFloat()
-                } catch (ex: java.lang.Exception) {
-                }
-            }
-            return 60.0f
+            currentFps
+            return currentFpsValue
         }
 }
