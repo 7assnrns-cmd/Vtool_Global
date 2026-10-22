@@ -206,7 +206,7 @@ public class AccessibilityScenceMode : AccessibilityService(), IEventReceiver {
         /* // 开发过程中用于分析界面点击（捕获广告按钮）
         if (event.eventType == AccessibilityEvent.TYPE_VIEW_CLICKED || event.eventType == AccessibilityEvent.TYPE_VIEW_FOCUSED) {
             val viewId = event.source?.viewIdResourceName // 有些跳过按钮不是文字来的 // if (event.text?.contains("跳过") == true) event.source?.viewIdResourceName else null
-            Log.d("@Scene", "点击了[$viewId]，在 ${event.className}")
+            Log.d("@Scene", "Clicked [$viewId]，在 ${event.className}")
         }
         */
 
@@ -353,7 +353,7 @@ public class AccessibilityScenceMode : AccessibilityService(), IEventReceiver {
 
                 val logs = if (floatLogView == null) null else StringBuilder()
                 logs?.run {
-                    append("Scene窗口检测\n", "屏幕: ${displayHeight}x${displayWidth}")
+                    append("SceneWindow Detection\n", "Screen: ${displayHeight}x${displayWidth}")
                     if (isLandscape) {
                         append(" 横向")
                     } else {
@@ -364,9 +364,9 @@ public class AccessibilityScenceMode : AccessibilityService(), IEventReceiver {
                     }
                     append("\n")
                     if (event != null) {
-                        append("事件: ${event.source?.packageName}\n")
+                        append("Event: ${event.source?.packageName}\n")
                     } else {
-                        append("事件: 主动轮询${Date().time / 1000}\n")
+                        append("Event: 主动轮询${Date().time / 1000}\n")
                     }
                 }
                 // TODO:
