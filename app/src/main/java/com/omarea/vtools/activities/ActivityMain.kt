@@ -101,29 +101,6 @@ class ActivityMain : ActivityBase() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // إضافة زر اللغة في شريط الأدوات
-        try {
-            val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(com.omarea.vtools.R.id.toolbar)
-            if (toolbar != null) {
-                toolbar.inflateMenu(0)
-                toolbar.menu.add(0, 99999, 0, "🌐 Language").setShowAsAction(android.view.MenuItem.SHOW_AS_ACTION_NEVER)
-                toolbar.setOnMenuItemClickListener { item ->
-                    if (item.itemId == 99999) {
-                        showLanguagePicker()
-                        true
-                    } else false
-                }
-            }
-        } catch (e: Exception) {
-            android.util.Log.w("Scene", "Language button injection failed: ${e.message}")
-        }
-
-        // عرض نافذة اختيار اللغة في أول تشغيل فقط
-        if (LocaleHelper.isFirstRun(this) && savedInstanceState == null) {
-            showLanguagePicker()
-        }
-
-
         if (!ActivityStartSplash.finished) {
             val intent = Intent(this.applicationContext, ActivityStartSplash::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
