@@ -1,3 +1,6 @@
+import com.omarea.vtools.LocaleHelper
+import com.omarea.vtools.LanguagePickerDialog
+
 package com.omarea.vtools.activities
 
 import android.app.ActivityManager
