@@ -1,13 +1,8 @@
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    buildFeatures {
-        viewBinding = true
-    }
-    buildFeatures {
-        viewBinding = true
-    }
     dataBinding {
         enabled =true
     }
