@@ -11,28 +11,61 @@ class FpsUtils(private val keepShell: KeepShell = KeepShellPublic.secondaryKeepS
 
     val currentFps: String?
         get() {
-            // 1. القراءة عبر SurfaceFlinger (الأدق)
+            // 1. المحاولة عبر مسارات الكرنل (Kernel Paths)
+            if (fpsFilePath == null) {
+                val paths = arrayOf(
+                    "/sys/class/drm/sde-crtc-0/measured_fps",
+                    "/sys/class/drm/sde-crtc-1/measured_fps",
+                    "/sys/devices/virtual/graphics/fb0/measured_fps"
+                )
+                for (path in paths) {
+                    if (fileExists(path)) {
+                        fpsFilePath = path
+                        break
+                    }
+                }
+            }
+
+            if (!fpsFilePath.isNullOrEmpty()) {
+                try {
+                    val res = keepShell.doCmdSync("su -c 'cat $fpsFilePath'").trim()
+                    val fps = res.toFloatOrNull()
+                    if (fps != null && fps > 0) {
+                        currentFpsValue = fps
+                        return String.format(Locale.US, "%.1f", fps)
+                    }
+                } catch (e: Exception) {}
+            }
+
+            // 2. المحاولة عبر SurfaceFlinger --latency (الطريقة الأدق)
             try {
-                val result = keepShell.doCmdSync("dumpsys SurfaceFlinger --latency").trim()
+                // استخدام أمر الروت لقراءة البيانات
+                val result = keepShell.doCmdSync("su -c 'dumpsys SurfaceFlinger --latency'").trim()
                 if (result.isNotEmpty() && !result.contains("Permission denied")) {
-                    val lines = result.split("\n")
+                    // فصل السطور
+                    val lines = result.split("\n").filter { it.isNotBlank() }
                     if (lines.size > 2) {
                         val timestamps = mutableListOf<Long>()
-                        // السطر الأول هو الـ refresh rate (نتجاهله)، نأخذ العمود الأول من بقية الأسطر
+                        // السطر الأول هو معدل التحديث (نتجاهله)، نأخذ العمود الثاني من بقية الأسطر
                         for (i in 1 until lines.size) {
                             val parts = lines[i].trim().split(Regex("\\s+"))
-                            if (parts.isNotEmpty()) {
-                                val ts = parts[0].toLongOrNull() ?: 0L
-                                // تجاهل القيم الفارغة أو القيمة القصوى (INT64_MAX)
+                            if (parts.size >= 2) {
+                                // القيمة في العمود الثاني هي actualPresentTime
+                                val ts = parts[1].toLongOrNull() ?: 0L
                                 if (ts > 0 && ts != 9223372036854775807L) {
                                     timestamps.add(ts)
                                 }
                             }
                         }
+                        
                         if (timestamps.size > 1) {
-                            val timeDiffNanos = timestamps.last() - timestamps.first()
-                            if (timeDiffNanos > 0) {
-                                val fps = (timestamps.size - 1).toFloat() * 1_000_000_000f / timeDiffNanos
+                            val first = timestamps.first()
+                            val last = timestamps.last()
+                            val durationSec = (last - first).toDouble() / 1_000_000_000.0
+                            
+                            if (durationSec > 0) {
+                                // معادلة ChatGPT: (frameCount - 1) / durationSec
+                                val fps = ((timestamps.size - 1) / durationSec).toFloat()
                                 if (fps > 0 && fps < 240) {
                                     currentFpsValue = fps
                                     return String.format(Locale.US, "%.1f", fps)
@@ -43,28 +76,8 @@ class FpsUtils(private val keepShell: KeepShell = KeepShellPublic.secondaryKeepS
                 }
             } catch (e: Exception) {}
 
-            // 2. القراءة من مسارات الكرنل (احتياطي)
-            if (fpsFilePath == null) {
-                val paths = arrayOf(
-                    "/sys/class/drm/sde-crtc-0/measured_fps",
-                    "/sys/class/graphics/fb0/measured_fps"
-                )
-                for (path in paths) {
-                    if (fileExists(path)) { fpsFilePath = path; break }
-                }
-            }
-            
-            if (!fpsFilePath.isNullOrEmpty()) {
-                try {
-                    val res = keepShell.doCmdSync("cat $fpsFilePath").trim()
-                    if (res.isNotEmpty() && res.toFloatOrNull() != null) {
-                        currentFpsValue = res.toFloat()
-                        return String.format(Locale.US, "%.1f", currentFpsValue)
-                    }
-                } catch (e: Exception) {}
-            }
-
-            return null // يعرض "غير معروف" بدلاً من 0.0
+            // في حال فشل كل شيء، إرجاع null لكي لا يظهر 0.0
+            return null 
         }
 
     val fps: Float
