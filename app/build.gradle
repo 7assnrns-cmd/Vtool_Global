@@ -1,8 +1,13 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
+    buildFeatures {
+        viewBinding = true
+    }
+    buildFeatures {
+        viewBinding = true
+    }
     dataBinding {
         enabled =true
     }
@@ -104,6 +109,7 @@ dependencies {
     // implementation files('libs/crimson.jar')
 }
 repositories {
+    maven { url 'https://api.xposed.info/' }
     maven { url 'https://api.xposed.info/' }
     mavenCentral()
 }
